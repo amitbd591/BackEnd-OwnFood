@@ -43,7 +43,7 @@ app.use(limiter);
 // const URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.fsp0qs4.mongodb.net/inventory-project?retryWrites=true&w=majority`;
 
 const URL =
-  "mongodb+srv://admin:00000000@testportfolio.m5q5knp.mongodb.net/Own-Food?retryWrites=true&w=majority";
+  "mongodb+srv://admin:00000000@cluster0.4sjujzo.mongodb.net/OwnFood-DataTable?retryWrites=true&w=majority";
 
 mongoose.connect(
   URL,

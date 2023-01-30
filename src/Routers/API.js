@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const UserController = require("../Controllers/Users/UsersController");
+const AdminController = require("../Controllers/Admins/AdminController");
 const AuthVerifyMiddleware = require("../Middlewares/AuthVerifyMiddleware");
 
-// User Profile
-router.post("/Registration", UserController.Registration);
+// Super Admin Registration Router
+router.post("/Registration", AdminController.Registration);
 
 module.exports = router;

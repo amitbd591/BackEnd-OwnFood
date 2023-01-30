@@ -13,5 +13,5 @@ const DataSchema = mongoose.Schema(
   { versionKey: false }
 );
 
-const UsersModel = mongoose.model("users", DataSchema);
-module.exports = UsersModel;
+const AdminModel = mongoose.model("admins", DataSchema);
+module.exports = AdminModel;
