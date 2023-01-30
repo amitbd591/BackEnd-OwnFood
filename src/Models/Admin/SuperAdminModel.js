@@ -13,5 +13,5 @@ const DataSchema = mongoose.Schema(
   { versionKey: false }
 );
 
-const AdminModel = mongoose.model("admins", DataSchema);
-module.exports = AdminModel;
+const SuperAdminModel = mongoose.model("super-admins", DataSchema);
+module.exports = SuperAdminModel;
