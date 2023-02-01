@@ -1,18 +1,11 @@
 const CreateToken = require("../../Utility/CreateToken");
-var CryptoJS = require("crypto-js");
+var md5 = require("md5");
 const LoginSubAdmin = async (request, UsersModel) => {
   try {
     let postBody = request.body;
-    // Encrypt Password
-    var password = CryptoJS.AES.encrypt(postBody.password, "key").toString();
-    // postBody.password = password;
 
-    var bytes = CryptoJS.AES.decrypt(
-      "U2FsdGVkX1/+alofkxPaw3CUOAvJvO1imeV+1+v64aI=",
-      "key"
-    );
-    var originalText = bytes.toString(CryptoJS.enc.Utf8);
-
+    const enPassword = md5(postBody.password);
+    postBody.password = enPassword;
 
     let data = await UsersModel.aggregate([
       { $match: request.body },

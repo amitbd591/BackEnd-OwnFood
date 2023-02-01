@@ -3,8 +3,8 @@ const CreateSubAdmin = async (request, SubAdminModel) => {
   try {
     let postBody = request.body;
 
-    console.log(md5("message"));
-    postBody.password = password;
+    const enPassword = md5(postBody.password);
+    postBody.password = enPassword;
 
     let data = await SubAdminModel.create(postBody);
     return { status: "Success", data: data };

@@ -2,7 +2,6 @@ const GetAllSubAdmin = async (request, SubAdminModel) => {
   try {
     let postBody = request.body;
     let data = await SubAdminModel.aggregate([
-      { $match: { email: "qxssswddfd@demo.com" } },
       {
         $project: {
           email: 1,
