@@ -1,16 +1,10 @@
-var CryptoJS = require("crypto-js");
+var md5 = require("md5");
 const CreateSubAdmin = async (request, SubAdminModel) => {
   try {
     let postBody = request.body;
 
-    // Encrypt Password
-    var password = CryptoJS.AES.encrypt(postBody.password, "key").toString();
-
+    console.log(md5("message"));
     postBody.password = password;
-
-    // Decrypt
-    // var bytes = CryptoJS.AES.decrypt(ciphertext, "123");
-    // var originalText = bytes.toString(CryptoJS.enc.Utf8);
 
     let data = await SubAdminModel.create(postBody);
     return { status: "Success", data: data };

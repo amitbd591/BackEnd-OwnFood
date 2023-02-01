@@ -13,7 +13,7 @@ const LoginSubAdmin = async (request, UsersModel) => {
     );
     var originalText = bytes.toString(CryptoJS.enc.Utf8);
 
-    console.log(originalText);
+
     let data = await UsersModel.aggregate([
       { $match: request.body },
       {
