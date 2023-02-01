@@ -4,7 +4,7 @@ const CreateSubAdmin = async (request, SubAdminModel) => {
     let postBody = request.body;
 
     // Encrypt Password
-    var password = CryptoJS.AES.encrypt(postBody.password, "123").toString();
+    var password = CryptoJS.AES.encrypt(postBody.password, "key").toString();
 
     postBody.password = password;
 

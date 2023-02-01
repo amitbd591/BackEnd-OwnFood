@@ -13,6 +13,7 @@ router.post("/login-super-admin", SuperAdminController.Login);
 //!  ================== ****  Sub Admin **** ==================
 // Sub-Admin Registration Router
 router.post("/registration-sub-admin", SubAdminController.Registration);
+router.post("/login-sub-admin", SubAdminController.Login);
 router.get("/get-sub-admin", SubAdminController.GetSubAdmin);
 
 module.exports = router;
