@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const AuthVerifyMiddleware = require("../Middlewares/AuthVerifyMiddleware");
 const SuperAdminController = require("../Controllers/Admins/SuperAdminController");
 const SubAdminController = require("../Controllers/Admins/SubAdminController");
 const DesignationController = require("../Controllers/Designation/DesignationController");
-const AuthVerifyMiddleware = require("../Middlewares/AuthVerifyMiddleware");
+const CategoryController = require("../Controllers/Category/CategoryController");
+const FoodTypeController = require("../Controllers/FoodType/FoodTypeController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -53,4 +55,75 @@ router.delete(
   DesignationController.DeleteDesignation
 );
 
+//!  ================== ****  Category Service **** ==================
+
+// Create Category Router
+router.post(
+  "/create-category",
+  AuthVerifyMiddleware,
+  CategoryController.CreateCategory
+);
+
+// Get Category Router
+router.get(
+  "/get-category",
+  AuthVerifyMiddleware,
+  CategoryController.GetCategory
+);
+// Get Single Category Router
+router.get(
+  "/get-single-category/:id",
+  AuthVerifyMiddleware,
+  CategoryController.GetSingleCategory
+);
+
+// Update Category Router
+router.post(
+  "/update-category/:id",
+  AuthVerifyMiddleware,
+  CategoryController.UpdateCategory
+);
+
+// Delete Category Router
+router.delete(
+  "/delete-category/:id",
+  AuthVerifyMiddleware,
+  CategoryController.DeleteCategory
+);
+
+//!  ================== ****  FoodType **** ==================
+
+// Create FoodType Router
+router.post(
+  "/create-foodType",
+  AuthVerifyMiddleware,
+  FoodTypeController.CreateFoodType
+);
+
+// Get FoodType Router
+router.get(
+  "/get-foodType",
+  AuthVerifyMiddleware,
+  FoodTypeController.GetFoodType
+);
+// Get Single FoodType Router
+router.get(
+  "/get-single-foodType/:id",
+  AuthVerifyMiddleware,
+  FoodTypeController.GetSingleFoodType
+);
+
+// Update FoodType Router
+router.post(
+  "/update-foodType/:id",
+  AuthVerifyMiddleware,
+  FoodTypeController.UpdateFoodType
+);
+
+// Delete FoodType Router
+router.delete(
+  "/delete-foodType/:id",
+  AuthVerifyMiddleware,
+  FoodTypeController.DeleteFoodType
+);
 module.exports = router;

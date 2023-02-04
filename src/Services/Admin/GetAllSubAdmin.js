@@ -5,6 +5,15 @@ const GetAllSubAdmin = async (request, SubAdminModel) => {
       {
         $project: {
           email: 1,
+          name: 1,
+          role: 1,
+          mobile: 1,
+          photo: 1,
+          country: 1,
+          city: 1,
+          zip: 1,
+          designation: 1,
+          address: 1,
         },
       },
     ]);
