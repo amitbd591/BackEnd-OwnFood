@@ -6,6 +6,8 @@ const SubAdminController = require("../Controllers/Admins/SubAdminController");
 const DesignationController = require("../Controllers/Designation/DesignationController");
 const CategoryController = require("../Controllers/Category/CategoryController");
 const FoodTypeController = require("../Controllers/FoodType/FoodTypeController");
+const PortionSizeUnitController = require("../Controllers/PortionSizeUnit/PortionSizeUnitController");
+const OrderStatusController = require("../Controllers/OrderStatus/OrderStatusController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -126,4 +128,77 @@ router.delete(
   AuthVerifyMiddleware,
   FoodTypeController.DeleteFoodType
 );
+
+//!  ================== ****  CreatePortionSizeUnit **** ==================
+
+// Create PortionSizeUnit Router
+router.post(
+  "/create-portionSizeUnit",
+  AuthVerifyMiddleware,
+  PortionSizeUnitController.CreatePortionSizeUnit
+);
+
+// Get PortionSizeUnit Router
+router.get(
+  "/get-portionSizeUnit",
+  AuthVerifyMiddleware,
+  PortionSizeUnitController.GetPortionSizeUnit
+);
+// Get Single PortionSizeUnit Router
+router.get(
+  "/get-single-portionSizeUnit/:id",
+  AuthVerifyMiddleware,
+  PortionSizeUnitController.GetSinglePortionSizeUnit
+);
+
+// Update PortionSizeUnit Router
+router.post(
+  "/update-portionSizeUnit/:id",
+  AuthVerifyMiddleware,
+  PortionSizeUnitController.UpdatePortionSizeUnit
+);
+
+// Delete PortionSizeUnit Router
+router.delete(
+  "/delete-portionSizeUnit/:id",
+  AuthVerifyMiddleware,
+  PortionSizeUnitController.DeletePortionSizeUnit
+);
+
+//!  ================== ****  OrderStatus **** ==================
+
+// Create OrderStatus Router
+router.post(
+  "/create-orderStatus",
+  AuthVerifyMiddleware,
+  OrderStatusController.CreateOrderStatus
+);
+
+// Get OrderStatus Router
+router.get(
+  "/get-orderStatus",
+  AuthVerifyMiddleware,
+  OrderStatusController.GetOrderStatus
+);
+// Get Single OrderStatus Router
+router.get(
+  "/get-single-orderStatus/:id",
+  AuthVerifyMiddleware,
+  OrderStatusController.GetSingleOrderStatus
+);
+
+// Update OrderStatus Router
+router.post(
+  "/update-orderStatus/:id",
+  AuthVerifyMiddleware,
+  OrderStatusController.UpdateOrderStatus
+);
+
+// Delete OrderStatus Router
+router.delete(
+  "/delete-orderStatus/:id",
+  AuthVerifyMiddleware,
+  OrderStatusController.DeleteOrderStatus
+);
+
 module.exports = router;

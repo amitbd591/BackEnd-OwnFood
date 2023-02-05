@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    foodTypeName: { type: String },
-    foodTypeImage: { type: String },
-    foodTypeCategories: { type: String },
+    sizeUnitName: { type: String },
     status: { type: Boolean },
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },
@@ -14,5 +12,5 @@ const DataSchema = mongoose.Schema(
   { versionKey: false }
 );
 
-const FoodTypeModel = mongoose.model("foodTypes", DataSchema);
-module.exports = FoodTypeModel;
+const PortionSizeUnitModel = mongoose.model("portionSizeUnits", DataSchema);
+module.exports = PortionSizeUnitModel;

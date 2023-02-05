@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
     name: { type: String },
-    status: { type: String },
+    status: { type: Boolean },
     mobile: { type: String },
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },
