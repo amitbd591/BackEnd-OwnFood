@@ -8,6 +8,8 @@ const CategoryController = require("../Controllers/Category/CategoryController")
 const FoodTypeController = require("../Controllers/FoodType/FoodTypeController");
 const PortionSizeUnitController = require("../Controllers/PortionSizeUnit/PortionSizeUnitController");
 const OrderStatusController = require("../Controllers/OrderStatus/OrderStatusController");
+const CuisineController = require("../Controllers/Cuisine/CuisineController");
+const IngrediantsController = require("../Controllers/Ingrediants/IngrediantsController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -44,6 +46,14 @@ router.get(
   AuthVerifyMiddleware,
   DesignationController.GetDesignation
 );
+
+// Get Single Designation Router
+router.get(
+  "/get-single-designation/:id",
+  AuthVerifyMiddleware,
+  DesignationController.GetSingleDesignation
+);
+
 // Update Designation Router
 router.post(
   "/update-designation/:id",
@@ -201,4 +211,71 @@ router.delete(
   OrderStatusController.DeleteOrderStatus
 );
 
+//!  ================== ****  Cuisine **** ==================
+
+// Create Cuisine Router
+router.post(
+  "/create-cuisine",
+  AuthVerifyMiddleware,
+  CuisineController.CreateCuisine
+);
+
+// Get Cuisine Router
+router.get("/get-cuisine", AuthVerifyMiddleware, CuisineController.GetCuisine);
+// Get Single Cuisine Router
+router.get(
+  "/get-single-cuisine/:id",
+  AuthVerifyMiddleware,
+  CuisineController.GetSingleCuisine
+);
+
+// Update Cuisine Router
+router.post(
+  "/update-cuisine/:id",
+  AuthVerifyMiddleware,
+  CuisineController.UpdateCuisine
+);
+
+// Delete Cuisine Router
+router.delete(
+  "/delete-cuisine/:id",
+  AuthVerifyMiddleware,
+  CuisineController.DeleteCuisine
+);
+
+//!  ================== ****  Ingrediants **** ==================
+
+// Create Ingrediants Router
+router.post(
+  "/create-ingrediants",
+  AuthVerifyMiddleware,
+  IngrediantsController.CreateIngrediants
+);
+
+// Get Ingrediants Router
+router.get(
+  "/get-ingrediants",
+  AuthVerifyMiddleware,
+  IngrediantsController.GetIngrediants
+);
+// Get Single Ingrediants Router
+router.get(
+  "/get-single-ingrediants/:id",
+  AuthVerifyMiddleware,
+  IngrediantsController.GetSingleIngrediants
+);
+
+// Update Ingrediants Router
+router.post(
+  "/update-ingrediants/:id",
+  AuthVerifyMiddleware,
+  IngrediantsController.UpdateIngrediants
+);
+
+// Delete Ingrediants Router
+router.delete(
+  "/delete-ingrediants/:id",
+  AuthVerifyMiddleware,
+  IngrediantsController.DeleteIngrediants
+);
 module.exports = router;
