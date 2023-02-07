@@ -7,16 +7,16 @@ const GetSingleCuisineService = async (request, Model) => {
         $match: { _id: id },
       },
       {
-        $project: {
-          cuisineID: 1,
-          cuisineName: 1,
-          cuisineImage: 1,
-          cuisineImageThumb: 1,
-          status: 1,
-          createdBy: 1,
-          createdDate: 1,
-          updatedBy: 1,
-          updatedDate: 1,
+        $addFields: {
+          Id: { $toString: "$_id" },
+        },
+      },
+      {
+        $lookup: {
+          from: "ingrediants",
+          localField: "Id",
+          foreignField: "cuisineID",
+          as: "ingrediantsData",
         },
       },
     ]);

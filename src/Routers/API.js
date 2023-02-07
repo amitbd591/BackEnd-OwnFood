@@ -5,11 +5,14 @@ const SuperAdminController = require("../Controllers/Admins/SuperAdminController
 const SubAdminController = require("../Controllers/Admins/SubAdminController");
 const DesignationController = require("../Controllers/Designation/DesignationController");
 const CategoryController = require("../Controllers/Category/CategoryController");
+const SubCategoryController = require("../Controllers/SubCategory/SubCategoryController");
 const FoodTypeController = require("../Controllers/FoodType/FoodTypeController");
 const PortionSizeUnitController = require("../Controllers/PortionSizeUnit/PortionSizeUnitController");
 const OrderStatusController = require("../Controllers/OrderStatus/OrderStatusController");
 const CuisineController = require("../Controllers/Cuisine/CuisineController");
 const IngrediantsController = require("../Controllers/Ingrediants/IngrediantsController");
+const AdditionalTagsController = require("../Controllers/AdditionalTags/AdditionalTagsController");
+const BonusFreeItemController = require("../Controllers//BonusFreeItem/BonusFreeItemController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -101,6 +104,42 @@ router.delete(
   "/delete-category/:id",
   AuthVerifyMiddleware,
   CategoryController.DeleteCategory
+);
+
+//!  ================== ****  Sub Category **** ==================
+// Create subcategory Router
+router.post(
+  "/create-subcategory",
+  AuthVerifyMiddleware,
+  SubCategoryController.CreateSubCategory
+);
+
+//get subcategory
+router.get(
+  "/get-subcategory",
+  AuthVerifyMiddleware,
+  SubCategoryController.GetSubCategory
+);
+
+//single subcategory
+router.get(
+  "/get-single-subcategory/:id",
+  AuthVerifyMiddleware,
+  SubCategoryController.GetSingleSubCategory
+);
+
+//update subcategory
+router.post(
+  "/update-subcategory/:id",
+  AuthVerifyMiddleware,
+  SubCategoryController.UpdateSubCategory
+);
+
+//delete subcategory
+router.delete(
+  "/delete-subcategory/:id",
+  AuthVerifyMiddleware,
+  SubCategoryController.DeleteSubCategory
 );
 
 //!  ================== ****  FoodType **** ==================
@@ -278,4 +317,79 @@ router.delete(
   AuthVerifyMiddleware,
   IngrediantsController.DeleteIngrediants
 );
+
+//!  ================== ****  Additional Tags  **** ==================
+
+//create additional tag router
+router.post(
+  "/create-additionaltags",
+  AuthVerifyMiddleware,
+  AdditionalTagsController.CreateAdditionalTag
+);
+
+//get additional tag router
+router.get(
+  "/get-additionaltags",
+  AuthVerifyMiddleware,
+  AdditionalTagsController.GetAdditionalTag
+);
+
+//get single additional tag
+router.get(
+  "/get-singleadditionaltags/:id",
+  AuthVerifyMiddleware,
+  AdditionalTagsController.GetSingleAdditionalTag
+);
+
+//update additional tag router
+router.post(
+  "/update-additionaltags/:id",
+  AuthVerifyMiddleware,
+  AdditionalTagsController.UpdateAdditionalTag
+);
+
+//delete additional tag
+router.delete(
+  "/delete-additionaltags/:id",
+  AuthVerifyMiddleware,
+  AdditionalTagsController.DeleteAdditionalTag
+);
+
+//!  ================== ****  Bonus Free Item  **** ==================
+
+//create bonus free item
+router.post(
+  "/create-bonus-freeitem",
+  AuthVerifyMiddleware,
+  BonusFreeItemController.CreateBonusFreeItem
+);
+
+//get bonus free item
+router.get(
+  "/get-bonus-freeitem",
+  AuthVerifyMiddleware,
+  BonusFreeItemController.GetBonusFreeItem
+);
+
+//get single bonus free item
+router.get(
+  "/get-single-bonus-freeitem/:id",
+  AuthVerifyMiddleware,
+  BonusFreeItemController.GetSingleBonusFreeItem
+);
+
+//update bonus free item
+router.post(
+  "/update-bonus-freeitem/:id",
+  AuthVerifyMiddleware,
+  BonusFreeItemController.UpdateBonusFreeItem
+);
+
+//delete bonus free item
+router.delete(
+  "/delete-bonus-freeitem/:id",
+  AuthVerifyMiddleware,
+  BonusFreeItemController.DeleteBonusFreeItem
+);
+
 module.exports = router;
