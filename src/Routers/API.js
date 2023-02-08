@@ -12,7 +12,8 @@ const OrderStatusController = require("../Controllers/OrderStatus/OrderStatusCon
 const CuisineController = require("../Controllers/Cuisine/CuisineController");
 const IngrediantsController = require("../Controllers/Ingrediants/IngrediantsController");
 const AdditionalTagsController = require("../Controllers/AdditionalTags/AdditionalTagsController");
-const BonusFreeItemController = require("../Controllers//BonusFreeItem/BonusFreeItemController");
+const BonusFreeItemController = require("../Controllers/BonusFreeItem/BonusFreeItemController");
+const FoodItemController = require("../Controllers/Food/FoodController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -390,6 +391,39 @@ router.delete(
   "/delete-bonus-freeitem/:id",
   AuthVerifyMiddleware,
   BonusFreeItemController.DeleteBonusFreeItem
+);
+
+//!  ================== ****  Food  **** ==================
+
+//create Food item
+router.post(
+  "/create-food",
+  AuthVerifyMiddleware,
+  FoodItemController.CreateFood
+);
+
+//get Food item
+router.get("/get-food", AuthVerifyMiddleware, FoodItemController.GetFood);
+
+//get single Food item
+router.get(
+  "/get-single-food/:id",
+  AuthVerifyMiddleware,
+  FoodItemController.GetSingleFood
+);
+
+//update Food item
+router.post(
+  "/update-food/:id",
+  AuthVerifyMiddleware,
+  FoodItemController.UpdateFood
+);
+
+//delete Food item
+router.delete(
+  "/delete-food/:id",
+  AuthVerifyMiddleware,
+  FoodItemController.DeleteFood
 );
 
 module.exports = router;
