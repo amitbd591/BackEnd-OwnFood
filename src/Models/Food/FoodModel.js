@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    cuisineID: { type: String },
+    cuisineID: { type: Array },
     foodTypeID: { type: String },
     categoryID: { type: String },
     foodName: { type: String },

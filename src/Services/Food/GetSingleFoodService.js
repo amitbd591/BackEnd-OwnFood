@@ -9,26 +9,6 @@ const GetSingleFoodService = async (request, Model) => {
       {
         $addFields: {
           Id: { $toString: "$_id" },
-          cuisineIDStr: { $toString: "$cuisineID" },
-        },
-      },
-      // Join together local cuisineID to foreign cuisineID (cuisines Model)
-      {
-        $lookup: {
-          from: "cuisines",
-          localField: "cuisineIDStr",
-          foreignField: "cuisineID",
-          as: "cuisineData",
-        },
-      },
-      { $unwind: "$cuisineData" },
-      // Join together local cuisineID to foreign cuisineID (ingrediants Model)
-      {
-        $lookup: {
-          from: "ingrediants",
-          localField: "cuisineIDStr",
-          foreignField: "cuisineID",
-          as: "ingrediantsData",
         },
       },
     ]);
