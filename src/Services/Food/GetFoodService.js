@@ -33,6 +33,7 @@ const GetFoodService = async (request, Model) => {
           customerDesireDeliveryDate: 1,
           createdBy: 1,
           createdDate: 1,
+          BSR: 1,
           updatedBy: 1,
           updatedDate: 1,
         },

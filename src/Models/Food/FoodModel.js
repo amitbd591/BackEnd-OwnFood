@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
+    cuisineID: { type: String },
+    foodTypeID: { type: String },
+    categoryID: { type: String },
     foodName: { type: String },
     foodSlug: { type: String },
     foodImage: { type: String },
@@ -9,7 +12,6 @@ const DataSchema = mongoose.Schema(
     foodVideo: { type: String },
     foodQty: { type: String },
     foodPrice: { type: String },
-    cuisineID: { type: String },
     foodDiscountPrice: { type: String },
     foodDiscountPercentage: { type: String },
     foodDiscountStartDate: { type: String },
@@ -25,14 +27,13 @@ const DataSchema = mongoose.Schema(
     foodOrderBeforeTime: { type: String },
     foodRating: { type: String },
     status: { type: Boolean },
-    foodTypeID: { type: String },
-    categoryID: { type: String },
     foodLabel: { type: Array },
     customerRequestedFoodQty: { type: String },
     customerDesireDeliveryDate: { type: String },
     createdBy: { type: String },
-    createdDate: { type: Date, default: Date.now() },
     updatedBy: { type: String },
+    BSR: { type: Number },
+    createdDate: { type: Date, default: Date.now() },
     updatedDate: { type: Date, default: Date.now() },
   },
   { versionKey: false }
