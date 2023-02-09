@@ -6,19 +6,6 @@ const GetSingleCuisineService = async (request, Model) => {
       {
         $match: { _id: id },
       },
-      {
-        $addFields: {
-          Id: { $toString: "$_id" },
-        },
-      },
-      {
-        $lookup: {
-          from: "ingrediants",
-          localField: "Id",
-          foreignField: "cuisineID",
-          as: "ingrediantsData",
-        },
-      },
     ]);
     return { status: "Success", data: data };
   } catch (e) {

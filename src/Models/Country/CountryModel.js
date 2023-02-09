@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    countryID: { type: String },
     countryName: { type: String },
     countryFlag: { type: String },
     countryCode: { type: String },

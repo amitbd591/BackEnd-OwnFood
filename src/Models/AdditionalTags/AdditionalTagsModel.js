@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
-    tagID: { type: String },
     tagName: { type: String },
     status: { type: Boolean },
     createdBy: { type: String },
