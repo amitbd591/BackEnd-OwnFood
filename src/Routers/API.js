@@ -15,6 +15,7 @@ const AdditionalTagsController = require("../Controllers/AdditionalTags/Addition
 const BonusFreeItemController = require("../Controllers/BonusFreeItem/BonusFreeItemController");
 const FoodItemController = require("../Controllers/Food/FoodController");
 const CountryController = require("../Controllers/Country/CountryController");
+const Region_StateController = require("../Controllers/Region_State/Region_StateController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -459,5 +460,38 @@ router.delete(
   AuthVerifyMiddleware,
   CountryController.DeleteCountry
 );
+
+//!  ================== ****  Region_State  **** ==================
+
+//create Region_State
+router.post(
+  "/create-region-state",
+  AuthVerifyMiddleware,
+  Region_StateController.CreateRegion_State
+);
+
+// //get Region_State
+// router.get("/get-region-state", AuthVerifyMiddleware, CountryController.GetCountry);
+
+// //get single Region_State
+// router.get(
+//   "/get-single-region-state/:id",
+//   AuthVerifyMiddleware,
+//   CountryController.GetSingleCountry
+// );
+
+// //update Region_State
+// router.post(
+//   "/update-region-state/:id",
+//   AuthVerifyMiddleware,
+//   CountryController.UpdateCountry
+// );
+
+// //delete Region_State
+// router.delete(
+//   "/delete-region-state/:id",
+//   AuthVerifyMiddleware,
+//   CountryController.DeleteCountry
+// );
 
 module.exports = router;
