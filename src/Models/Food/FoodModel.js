@@ -33,6 +33,7 @@ const DataSchema = mongoose.Schema(
     createdBy: { type: String },
     updatedBy: { type: String },
     BSR: { type: Number },
+    
     createdDate: { type: Date, default: Date.now() },
     updatedDate: { type: Date, default: Date.now() },
   },

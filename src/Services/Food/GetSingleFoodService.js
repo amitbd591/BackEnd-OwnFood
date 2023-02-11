@@ -7,11 +7,25 @@ const GetSingleFoodService = async (request, Model) => {
         $match: { _id: id },
       },
       {
-        $lookup: {
-          from: "foodtypes",
-          localField: "foodTypeID",
-          foreignField: "_id",
-          as: "foodtypes",
+        $facet: {
+          Rows: [
+            {
+              $lookup: {
+                from: "foodtypes",
+                localField: "foodTypeID",
+                foreignField: "_id",
+                as: "foodtypesData",
+              },
+            },
+            {
+              $lookup: {
+                from: "categorys",
+                localField: "categoryID",
+                foreignField: "_id",
+                as: "categorysData",
+              },
+            },
+          ],
         },
       },
     ]);
