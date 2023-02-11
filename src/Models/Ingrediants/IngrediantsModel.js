@@ -7,7 +7,7 @@ const DataSchema = mongoose.Schema(
     ingredientThumb: { type: String },
     ingredientQty: { type: String },
     status: { type: Boolean },
-    cuisineID: { type: String },
+    cuisineID: { type: mongoose.Schema.Types.ObjectId },
 
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },

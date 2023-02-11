@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
     cuisineID: { type: Array },
-    foodTypeID: { type: String },
-    categoryID: { type: String },
+    foodTypeID: {type: mongoose.Schema.Types.ObjectId },
+    categoryID: { type: mongoose.Schema.Types.ObjectId },
     foodName: { type: String },
     foodSlug: { type: String },
     foodImage: { type: String },

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    countryID: { type: String },
+    countryID: { type: mongoose.Schema.Types.ObjectId },
     cuisineName: { type: String },
     cuisineImage: { type: String },
     data: { type: String },

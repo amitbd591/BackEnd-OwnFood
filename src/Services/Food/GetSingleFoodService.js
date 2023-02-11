@@ -7,8 +7,11 @@ const GetSingleFoodService = async (request, Model) => {
         $match: { _id: id },
       },
       {
-        $addFields: {
-          Id: { $toString: "$_id" },
+        $lookup: {
+          from: "foodtypes",
+          localField: "foodTypeID",
+          foreignField: "_id",
+          as: "foodtypes",
         },
       },
     ]);

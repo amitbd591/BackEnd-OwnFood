@@ -14,5 +14,5 @@ const DataSchema = mongoose.Schema(
   { versionKey: false }
 );
 
-const FoodTypeModel = mongoose.model("foodTypes", DataSchema);
+const FoodTypeModel = mongoose.model("foodtypes", DataSchema);
 module.exports = FoodTypeModel;

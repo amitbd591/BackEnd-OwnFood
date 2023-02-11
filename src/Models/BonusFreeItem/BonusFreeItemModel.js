@@ -5,7 +5,7 @@ const DataSchema = mongoose.Schema(
     bonusFreeItemImage: { type: String },
     bonusFreeItemThum: { type: String },
     bonusFreeItemVideo: { type: String },
-    sellerID: { type: String },
+    sellerID: { type: mongoose.Schema.Types.ObjectId },
   },
   { versionKey: false }
 );

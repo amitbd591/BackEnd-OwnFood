@@ -6,7 +6,7 @@ const DataSchema = mongoose.Schema(
     categoryImage: { type: String },
     categorySlug: { type: String },
     status: { type: String },
-    categoryID: { type: String },
+    categoryID: { type: mongoose.Schema.Types.ObjectId },
 
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },
