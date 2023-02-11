@@ -3,6 +3,10 @@ const GetFoodService = async (request, Model) => {
     let data = await Model.aggregate([
       {
         $project: {
+          customerID: 1,
+          sellerID: 1,
+          foodTypeID: 1,
+          categoryID: 1,
           foodName: 1,
           foodSlug: 1,
           foodImage: 1,
@@ -10,7 +14,7 @@ const GetFoodService = async (request, Model) => {
           foodVideo: 1,
           foodQty: 1,
           foodPrice: 1,
-          cuisineID: 1,
+          cuisineCollection: 1,
           foodDiscountPrice: 1,
           foodDiscountPercentage: 1,
           foodDiscountStartDate: 1,
@@ -26,11 +30,10 @@ const GetFoodService = async (request, Model) => {
           foodOrderBeforeTime: 1,
           foodRating: 1,
           status: 1,
-          foodTypeID: 1,
-          categoryID: 1,
           foodLabel: 1,
           customerRequestedFoodQty: 1,
           customerDesireDeliveryDate: 1,
+          customerDesireDeliveryTime: 1,
           createdBy: 1,
           createdDate: 1,
           BSR: 1,

@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    cuisineID: { type: Array },
-    foodTypeID: {type: mongoose.Schema.Types.ObjectId },
+    customerID: { type: mongoose.Schema.Types.ObjectId },
+    sellerID: { type: mongoose.Schema.Types.ObjectId },
+    foodTypeID: { type: mongoose.Schema.Types.ObjectId },
     categoryID: { type: mongoose.Schema.Types.ObjectId },
+    cuisineCollection: { type: Array },
     foodName: { type: String },
     foodSlug: { type: String },
     foodImage: { type: String },
@@ -30,10 +32,11 @@ const DataSchema = mongoose.Schema(
     foodLabel: { type: Array },
     customerRequestedFoodQty: { type: String },
     customerDesireDeliveryDate: { type: String },
+    customerDesireDeliveryTime: { type: String },
     createdBy: { type: String },
     updatedBy: { type: String },
     BSR: { type: Number },
-    
+
     createdDate: { type: Date, default: Date.now() },
     updatedDate: { type: Date, default: Date.now() },
   },
