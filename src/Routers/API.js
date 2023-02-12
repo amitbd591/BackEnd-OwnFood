@@ -16,6 +16,9 @@ const BonusFreeItemController = require("../Controllers/BonusFreeItem/BonusFreeI
 const FoodItemController = require("../Controllers/Food/FoodController");
 const CountryController = require("../Controllers/Country/CountryController");
 const Region_StateController = require("../Controllers/Region_State/Region_StateController");
+const CityController = require("../Controllers/City/CityController");
+const AddressBookController = require("../Controllers/AddressBook/AddressBookController");
+const FoodReviewController = require("../Controllers/FoodReview/FoodReviewController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -470,28 +473,135 @@ router.post(
   Region_StateController.CreateRegion_State
 );
 
-// //get Region_State
-// router.get("/get-region-state", AuthVerifyMiddleware, CountryController.GetCountry);
+//get Region_State
+router.get(
+  "/get-region-state",
+  AuthVerifyMiddleware,
+  Region_StateController.GetRegion_State
+);
 
-// //get single Region_State
-// router.get(
-//   "/get-single-region-state/:id",
-//   AuthVerifyMiddleware,
-//   CountryController.GetSingleCountry
-// );
+//get single Region_State
+router.get(
+  "/get-single-region-state/:id",
+  AuthVerifyMiddleware,
+  Region_StateController.GetSingleRegion_State
+);
 
-// //update Region_State
-// router.post(
-//   "/update-region-state/:id",
-//   AuthVerifyMiddleware,
-//   CountryController.UpdateCountry
-// );
+//update Region_State
+router.post(
+  "/update-region-state/:id",
+  AuthVerifyMiddleware,
+  Region_StateController.UpdateRegion_State
+);
 
-// //delete Region_State
-// router.delete(
-//   "/delete-region-state/:id",
-//   AuthVerifyMiddleware,
-//   CountryController.DeleteCountry
-// );
+//delete Region_State
+router.delete(
+  "/delete-region-state/:id",
+  AuthVerifyMiddleware,
+  Region_StateController.DeleteRegion_State
+);
+
+//!  ================== ****  City  **** ==================
+
+//create City
+router.post("/create-city", AuthVerifyMiddleware, CityController.CreateCity);
+
+//get City
+router.get("/get-city", AuthVerifyMiddleware, CityController.GetCity);
+
+//get single City
+router.get(
+  "/get-single-city/:id",
+  AuthVerifyMiddleware,
+  CityController.GetSingleCity
+);
+
+//update City
+router.post(
+  "/update-city/:id",
+  AuthVerifyMiddleware,
+  CityController.UpdateCity
+);
+
+//delete City
+router.delete(
+  "/delete-city/:id",
+  AuthVerifyMiddleware,
+  CityController.DeleteCity
+);
+
+//!  ================== ****  AddressBook  **** ==================
+
+//create AddressBook
+router.post(
+  "/create-address-book",
+  AuthVerifyMiddleware,
+  AddressBookController.CreateAddressBook
+);
+
+//get AddressBook
+router.get(
+  "/get-address-book",
+  AuthVerifyMiddleware,
+  AddressBookController.GetAddressBook
+);
+
+//get single AddressBook
+router.get(
+  "/get-address-book/:id",
+  AuthVerifyMiddleware,
+  AddressBookController.GetSingleAddressBook
+);
+
+//update AddressBook
+router.post(
+  "/update-address-book/:id",
+  AuthVerifyMiddleware,
+  AddressBookController.UpdateAddressBook
+);
+
+//delete AddressBook
+router.delete(
+  "/delete-address-book/:id",
+  AuthVerifyMiddleware,
+  AddressBookController.DeleteAddressBook
+);
+
+//!  ================== ****  Food Review  **** ==================
+
+//create food review
+router.post(
+  "/create-food-review",
+  AuthVerifyMiddleware,
+  FoodReviewController.CreateFoodReview
+);
+
+//get food review
+router.get(
+  "/get-food-review",
+  AuthVerifyMiddleware,
+  FoodReviewController.GetFoodReview
+);
+
+//get single food review
+router.get(
+  "/get-single-food-review/:id",
+  AuthVerifyMiddleware,
+  FoodReviewController.GetSingleFoodReview
+);
+
+//update single food review
+router.post(
+  "/update-food-review/:id",
+  AuthVerifyMiddleware,
+  FoodReviewController.UpdateFoodReview
+);
+
+//delete single food review
+router.delete(
+  "/delete-food-review/:id",
+  AuthVerifyMiddleware,
+  FoodReviewController.DeleteFoodReview
+);
 
 module.exports = router;

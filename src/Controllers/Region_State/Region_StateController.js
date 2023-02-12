@@ -1,5 +1,9 @@
 const Region_StateModel = require("../../Models/Region_State/Region_StateModel");
 const CreateRegion_StateService = require("../../Services/Region_State/CreateRegion_StateService");
+const DeleteRegion_StateService = require("../../Services/Region_State/DeleteRegion_StateService");
+const GetRegion_StateService = require("../../Services/Region_State/GetRegion_StateService");
+const GetSingleRegion_StateService = require("../../Services/Region_State/GetSingleRegion_StateService");
+const UpdateRegion_StateService = require("../../Services/Region_State/UpdateRegion_StateService");
 
 //! Create Region_State
 exports.CreateRegion_State = async (req, res) => {
