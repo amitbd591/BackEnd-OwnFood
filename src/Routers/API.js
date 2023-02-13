@@ -19,6 +19,8 @@ const Region_StateController = require("../Controllers/Region_State/Region_State
 const CityController = require("../Controllers/City/CityController");
 const AddressBookController = require("../Controllers/AddressBook/AddressBookController");
 const FoodReviewController = require("../Controllers/FoodReview/FoodReviewController");
+const CartItemsController = require("../Controllers/CartItems/CartItemsController");
+const OrdersController = require("../Controllers/Orders/OrdersController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -602,6 +604,76 @@ router.delete(
   "/delete-food-review/:id",
   AuthVerifyMiddleware,
   FoodReviewController.DeleteFoodReview
+);
+
+//!  ================== ****  CartItems API  **** ==================
+
+//create CartItems
+router.post(
+  "/create-cart-items",
+  AuthVerifyMiddleware,
+  CartItemsController.CreateCarItems
+);
+
+//get CartItems
+router.get(
+  "/get-cart-items",
+  AuthVerifyMiddleware,
+  CartItemsController.GetCarItems
+);
+
+//get single CartItems
+router.get(
+  "/get-single-cart-items/:id",
+  AuthVerifyMiddleware,
+  CartItemsController.GetSingleCarItems
+);
+
+//update single CartItems
+router.post(
+  "/update-cart-items/:id",
+  AuthVerifyMiddleware,
+  CartItemsController.UpdateCarItems
+);
+
+//delete single CartItems
+router.delete(
+  "/delete-food-review/:id",
+  AuthVerifyMiddleware,
+  CartItemsController.DeleteCarItems
+);
+
+//!  ================== ****  Orders API  **** ==================
+
+//create Orders
+router.post(
+  "/create-orders",
+  AuthVerifyMiddleware,
+  OrdersController.CreateOrders
+);
+
+//get Orders
+router.get("/get-orders", AuthVerifyMiddleware, OrdersController.GetOrders);
+
+//get single Orders
+router.get(
+  "/get-single-orders/:id",
+  AuthVerifyMiddleware,
+  OrdersController.GetSingleOrders
+);
+
+//update single Orders
+router.post(
+  "/update-orders/:id",
+  AuthVerifyMiddleware,
+  OrdersController.UpdateOrders
+);
+
+//delete single Orders
+router.delete(
+  "/delete-orders/:id",
+  AuthVerifyMiddleware,
+  OrdersController.DeleteOrders
 );
 
 module.exports = router;
