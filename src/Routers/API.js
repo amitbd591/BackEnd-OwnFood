@@ -21,6 +21,8 @@ const AddressBookController = require("../Controllers/AddressBook/AddressBookCon
 const FoodReviewController = require("../Controllers/FoodReview/FoodReviewController");
 const CartItemsController = require("../Controllers/CartItems/CartItemsController");
 const OrdersController = require("../Controllers/Orders/OrdersController");
+const OrderTackingController = require("../Controllers/OrderTacking/OrderTackingController");
+const RiderReviewController = require("../Controllers/RiderReview/RiderReviewController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -638,7 +640,7 @@ router.post(
 
 //delete single CartItems
 router.delete(
-  "/delete-food-review/:id",
+  "/delete-cart-items/:id",
   AuthVerifyMiddleware,
   CartItemsController.DeleteCarItems
 );
@@ -674,6 +676,80 @@ router.delete(
   "/delete-orders/:id",
   AuthVerifyMiddleware,
   OrdersController.DeleteOrders
+);
+
+//!  ================== ****  Order Tacking  **** ==================
+
+//create OrderTacking
+router.post(
+  "/create-orders-tacking",
+  AuthVerifyMiddleware,
+  OrderTackingController.CreateOrderTacking
+);
+
+//get OrderTacking
+router.get(
+  "/get-orders-tacking",
+  AuthVerifyMiddleware,
+  OrderTackingController.GetOrderTacking
+);
+
+//get single OrderTacking
+router.get(
+  "/get-single-orders-tacking/:id",
+  AuthVerifyMiddleware,
+  OrderTackingController.GetSingleOrderTacking
+);
+
+//update single OrderTacking
+router.post(
+  "/update-orders-tacking/:id",
+  AuthVerifyMiddleware,
+  OrderTackingController.UpdateOrderTacking
+);
+
+//delete single OrderTacking
+router.delete(
+  "/delete-orders-tacking/:id",
+  AuthVerifyMiddleware,
+  OrderTackingController.DeleteOrderTacking
+);
+
+//!  ================== ****  RiderReview  **** ==================
+
+//create RiderReview
+router.post(
+  "/create-rider-review",
+  AuthVerifyMiddleware,
+  RiderReviewController.CreateRiderReview
+);
+
+//get RiderReview
+router.get(
+  "/get-rider-review",
+  AuthVerifyMiddleware,
+  RiderReviewController.GetRiderReview
+);
+
+//get single RiderReview
+router.get(
+  "/get-single-rider-review/:id",
+  AuthVerifyMiddleware,
+  RiderReviewController.GetSingleRiderReview
+);
+
+//update single RiderReview
+router.post(
+  "/update-rider-review/:id",
+  AuthVerifyMiddleware,
+  RiderReviewController.UpdateRiderReview
+);
+
+//delete single RiderReview
+router.delete(
+  "/delete-rider-review/:id",
+  AuthVerifyMiddleware,
+  RiderReviewController.DeleteRiderReview
 );
 
 module.exports = router;

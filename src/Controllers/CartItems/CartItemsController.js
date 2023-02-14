@@ -1,5 +1,6 @@
 const CartItemsModel = require("../../Models/CartItems/CartItemsModel");
 const CreateCartItemsService = require("../../Services/CartItems/CreateCartItemsService");
+const DeleteCarItemsService = require("../../Services/CartItems/DeleteCarItemsService");
 const GetCartItemsService = require("../../Services/CartItems/GetCartItemsService");
 const GetSingleCartItemsService = require("../../Services/CartItems/GetSingleCartItemsService");
 const UpdateCartItemsService = require("../../Services/CartItems/UpdateCartItemsService");
