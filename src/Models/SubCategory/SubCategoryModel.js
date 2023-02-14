@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
+    categoryID: { type: mongoose.Schema.Types.ObjectId },
     categoryName: { type: String },
     categoryImage: { type: String },
     categorySlug: { type: String },
     status: { type: String },
-    categoryID: { type: mongoose.Schema.Types.ObjectId },
 
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },
@@ -16,5 +16,5 @@ const DataSchema = mongoose.Schema(
   { versionKey: false }
 );
 
-const SubCategoryModel = mongoose.model("sub-categories", DataSchema);
+const SubCategoryModel = mongoose.model("subcategories", DataSchema);
 module.exports = SubCategoryModel;

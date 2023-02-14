@@ -6,15 +6,11 @@ const GetSingleCountryService = async (request, Model) => {
       {
         $match: { _id: id },
       },
-      {
-        $addFields: {
-          Id: { $toString: "$_id" },
-        },
-      },
+
       {
         $lookup: {
           from: "cuisines",
-          localField: "Id",
+          localField: "_id",
           foreignField: "countryID",
           as: "cuisinesData",
         },

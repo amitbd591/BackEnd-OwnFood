@@ -16,6 +16,7 @@ const GetSingleSubCategoryService = async (request, model) => {
           createdBy: 1,
           createdDate: 1,
           updatedBy: 1,
+          categoryID: 1,
           updatedDate: 1,
           status: 1,
         },

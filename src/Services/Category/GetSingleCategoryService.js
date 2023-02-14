@@ -6,16 +6,13 @@ const GetSingleCategoryService = async (request, Model) => {
       {
         $match: { _id: id },
       },
+
       {
-        $project: {
-          categoryName: 1,
-          categoryImage: 1,
-          categorySlug: 1,
-          categoryStatus: 1,
-          createdBy: 1,
-          createdDate: 1,
-          updatedBy: 1,
-          updatedDate: 1,
+        $lookup: {
+          from: "subcategories",
+          localField: "_id",
+          foreignField: "categoryID",
+          as: "subCategories",
         },
       },
     ]);
