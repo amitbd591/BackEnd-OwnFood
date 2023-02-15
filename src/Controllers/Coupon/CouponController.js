@@ -1,3 +1,6 @@
+const CouponModel = require("../../Models/Coupon/CouponModel");
+const CreateCouponService = require("../../Services/Coupon/CreateCouponService");
+
 //! Create Coupon
 exports.CreateCoupon = async (req, res) => {
   let result = await CreateCouponService(req, CouponModel);

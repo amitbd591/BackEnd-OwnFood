@@ -23,6 +23,7 @@ const CartItemsController = require("../Controllers/CartItems/CartItemsControlle
 const OrdersController = require("../Controllers/Orders/OrdersController");
 const OrderTackingController = require("../Controllers/OrderTacking/OrderTackingController");
 const RiderReviewController = require("../Controllers/RiderReview/RiderReviewController");
+const UsersController = require("../Controllers/Users/UsersController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -750,6 +751,35 @@ router.delete(
   "/delete-rider-review/:id",
   AuthVerifyMiddleware,
   RiderReviewController.DeleteRiderReview
+);
+
+//!  ================== ****  Users  **** ==================
+
+//create Users
+router.post("/create-users", AuthVerifyMiddleware, UsersController.CreateUsers);
+
+//get Users
+router.get("/get-users", AuthVerifyMiddleware, UsersController.GetUsers);
+
+//get single Users
+router.get(
+  "/get-single-users/:id",
+  AuthVerifyMiddleware,
+  UsersController.GetSingleUsers
+);
+
+//update single Users
+router.post(
+  "/update-users/:id",
+  AuthVerifyMiddleware,
+  UsersController.UpdateUsers
+);
+
+//delete single Users
+router.delete(
+  "/delete-users/:id",
+  AuthVerifyMiddleware,
+  UsersController.DeleteUsers
 );
 
 module.exports = router;

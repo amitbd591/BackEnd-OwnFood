@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    regionID: { type: mongoose.Schema.Types.ObjectId },
-
     couponCode: { type: String },
     couponStartDate: { type: String },
     couponEndDate: { type: String },
