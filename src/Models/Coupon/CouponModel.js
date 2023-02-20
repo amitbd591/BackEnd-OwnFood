@@ -1,23 +1,22 @@
 const mongoose = require("mongoose");
-
 const DataSchema = mongoose.Schema(
   {
+    couponRefOrderID: { type: mongoose.Schema.Types.ObjectId },
+    categoriesID: { type: mongoose.Schema.Types.ObjectId },
+    couponForProductID: { type: mongoose.Schema.Types.ObjectId },
+    sellerID: { type: mongoose.Schema.Types.ObjectId },
+    createdBy: { type: mongoose.Schema.Types.ObjectId },
+    isForReview: { type: Boolean },
+    isCouponForAllProduct: { type: Boolean },
+    couponForUserID: { type: Array },
     couponCode: { type: String },
-    couponStartDate: { type: String },
-    couponEndDate: { type: String },
-    couponAmount: { type: String },
-    couponIsPercentage: { type: String },
-    couponMinPurchase: { type: String },
-    couponForAll: { type: String },
-    codeForUserIDs: { type: Array },
-
-    createdBy: { type: String },
-    createdDate: { type: Date, default: Date.now() },
-    updatedBy: { type: String },
-    updatedDate: { type: Date, default: Date.now() },
+    couponStartDate: { type: Date, default: Date.now() },
+    couponEndDate: { type: Date, default: Date.now() },
+    couponAmount: { type: Number },
+    couponIsPercentage: { type: Boolean },
+    couponMinPurchase: { type: Number },
   },
   { versionKey: false }
 );
-
-const CouponModel = mongoose.model("coupons", DataSchema);
+const CouponModel = mongoose.model("coupon", DataSchema);
 module.exports = CouponModel;

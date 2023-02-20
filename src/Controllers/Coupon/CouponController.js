@@ -1,5 +1,9 @@
 const CouponModel = require("../../Models/Coupon/CouponModel");
 const CreateCouponService = require("../../Services/Coupon/CreateCouponService");
+const DeleteCouponService = require("../../Services/Coupon/DeleteCouponService");
+const GetCouponService = require("../../Services/Coupon/GetCouponService");
+const GetSingleCouponService = require("../../Services/Coupon/GetSingleCouponService");
+const UpdateCouponService = require("../../Services/Coupon/UpdateCouponService");
 
 //! Create Coupon
 exports.CreateCoupon = async (req, res) => {

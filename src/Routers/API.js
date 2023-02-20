@@ -24,6 +24,12 @@ const OrdersController = require("../Controllers/Orders/OrdersController");
 const OrderTackingController = require("../Controllers/OrderTacking/OrderTackingController");
 const RiderReviewController = require("../Controllers/RiderReview/RiderReviewController");
 const UsersController = require("../Controllers/Users/UsersController");
+const RecipeController = require("../Controllers/Recipe/RecipeController");
+const CouponController = require("../Controllers/Coupon/CouponController");
+const FoodDiaryController = require("../Controllers/FoodDiary/FoodDiaryController");
+const BecomeSellerController = require("../Controllers/BecomeSeller/BecomeSellerController");
+const RiderController = require("../Controllers/Rider/RiderController");
+const FoodPhotoController = require("../Controllers/FoodPhoto/FoodPhotoController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -780,6 +786,212 @@ router.delete(
   "/delete-users/:id",
   AuthVerifyMiddleware,
   UsersController.DeleteUsers
+);
+
+//!  ================== ****  Recipe  **** ==================
+
+//create recipe
+router.post(
+  "/create-recipe",
+  AuthVerifyMiddleware,
+  RecipeController.CreateRecipe
+);
+
+//get recipe
+router.get("/get-recipe", AuthVerifyMiddleware, RecipeController.GetRecipe);
+
+//get single recipe
+router.get(
+  "/get-single-recipe/:id",
+  AuthVerifyMiddleware,
+  RecipeController.GetSingleRecipe
+);
+
+//update recipe
+router.post(
+  "/update-recipe/:id",
+  AuthVerifyMiddleware,
+  RecipeController.UpdateRecipe
+);
+
+//delete recipe
+router.delete(
+  "/delete-recipe/:id",
+  AuthVerifyMiddleware,
+  RecipeController.DeleteRecipe
+);
+
+//!  ================== ****  Coupon  **** ==================
+
+//create Coupon
+router.post(
+  "/create-coupon",
+  AuthVerifyMiddleware,
+  CouponController.CreateCoupon
+);
+
+//get Coupon
+router.get("/get-coupon", AuthVerifyMiddleware, CouponController.GetCoupon);
+
+//get single Coupon
+router.get(
+  "/get-single-coupon/:id",
+  AuthVerifyMiddleware,
+  CouponController.GetSingleCoupon
+);
+
+//update Coupon
+router.post(
+  "/update-coupon/:id",
+  AuthVerifyMiddleware,
+  CouponController.UpdateCoupon
+);
+
+//delete Coupon
+router.delete(
+  "/delete-coupon/:id",
+  AuthVerifyMiddleware,
+  CouponController.DeleteCoupon
+);
+
+//!  ================== ****  Food Diary  **** ==================
+
+//create food diary
+router.post(
+  "/create-food-diary",
+  AuthVerifyMiddleware,
+  FoodDiaryController.CreateFoodDiary
+);
+
+//get food diary
+router.get(
+  "/get-food-diary",
+  AuthVerifyMiddleware,
+  FoodDiaryController.GetFoodDiary
+);
+
+//get single food diary
+router.get(
+  "/get-single-food-diary/:id",
+  AuthVerifyMiddleware,
+  FoodDiaryController.GetSingleFoodDiary
+);
+
+//update food diary
+router.post(
+  "/update-food-diary/:id",
+  AuthVerifyMiddleware,
+  FoodDiaryController.UpdateFoodDiary
+);
+
+//delete food diary
+router.delete(
+  "/delete-food-diary/:id",
+  AuthVerifyMiddleware,
+  FoodDiaryController.DeleteFoodDiary
+);
+
+//!  ================== ****  Become a seller  **** ==================
+
+//create become a seller
+router.post(
+  "/create-become-seller",
+  AuthVerifyMiddleware,
+  BecomeSellerController.CreateBecomeSeller
+);
+
+//get become  a seller
+router.get(
+  "/get-become-seller",
+  AuthVerifyMiddleware,
+  BecomeSellerController.GetBecomeSeller
+);
+
+//get single become a seller with foods
+router.get(
+  "/get-single-become-seller/:id",
+  AuthVerifyMiddleware,
+  BecomeSellerController.GetSingleBecomeSeller
+);
+
+//update become a seller
+router.post(
+  "/update-become-seller/:id",
+  AuthVerifyMiddleware,
+  BecomeSellerController.UpdateBecomeSeller
+);
+
+//delete become a seller
+router.delete(
+  "/delete-become-seller/:id",
+  AuthVerifyMiddleware,
+  BecomeSellerController.DeleteBecomeSeller
+);
+
+//!  ================== ****  Rider  **** ==================
+
+//create Rider
+router.post("/create-rider", AuthVerifyMiddleware, RiderController.CreateRider);
+
+//get Rider
+router.get("/get-rider", AuthVerifyMiddleware, RiderController.GetRider);
+
+//get single Rider
+router.get(
+  "/get-single-rider/:id",
+  AuthVerifyMiddleware,
+  RiderController.GetSingleRider
+);
+
+//update Rider
+router.post(
+  "/update-rider/:id",
+  AuthVerifyMiddleware,
+  RiderController.UpdateRider
+);
+
+//delete Rider
+router.delete(
+  "/delete-rider/:id",
+  AuthVerifyMiddleware,
+  RiderController.DeleteRider
+);
+
+//!  ================== ****  Food Photo  **** ==================
+
+//create food photo
+router.post(
+  "/create-food-photo",
+  AuthVerifyMiddleware,
+  FoodPhotoController.CreateFoodPhoto
+);
+
+//get food photo
+router.get(
+  "/get-food-photo",
+  AuthVerifyMiddleware,
+  FoodPhotoController.GetFoodPhoto
+);
+
+//get single food photo
+router.get(
+  "/get-single-food-photo/:id",
+  AuthVerifyMiddleware,
+  FoodPhotoController.GetSingleFoodPhoto
+);
+
+//update food photo
+router.post(
+  "/update-food-photo/:id",
+  AuthVerifyMiddleware,
+  FoodPhotoController.UpdateFoodPhoto
+);
+
+//delete food photo
+router.delete(
+  "/delete-food-photo/:id",
+  AuthVerifyMiddleware,
+  FoodPhotoController.DeleteFoodPhoto
 );
 
 module.exports = router;
