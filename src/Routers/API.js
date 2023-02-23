@@ -476,6 +476,13 @@ router.delete(
   CountryController.DeleteCountry
 );
 
+// Get Food Group By Country
+router.get(
+  "/get-food-group-by-country",
+  AuthVerifyMiddleware,
+  CountryController.GetFoodGroupByCountry
+);
+
 //!  ================== ****  Region_State  **** ==================
 
 //create Region_State

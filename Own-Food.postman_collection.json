@@ -3187,6 +3187,117 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Banners API",
+			"item": [
+				{
+					"name": "create-banners",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"bannerTitle\": \"RTTT\",\r\n    \"bannerDesc\": \"RTTT\",\r\n    \"bannerImage\": \"RTTT\",\r\n    \"bannerBackgroundColor\": \"RTTT\",\r\n    \"bannerButtonLabel\": \"RTTT\",\r\n    \"bannerButtonColor\": \"RTTT\",\r\n    \"bannerButtonURL\": \"RTTT\",\r\n    \"Status\": true,\r\n    \"orderBy\":\"RTTT\",\r\n    \"bannerExpiry\": \"RTTT\",\r\n    \"categoryIDs\": [ \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\" ],\r\n    \"sellerID\": \"63f35454b08ce4c132fb2fdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/create-banners",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"create-banners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-banners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-banners",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-banners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-banners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-single-banners/63f72e6c1216f60e09d76761",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-single-banners",
+								"63f72e6c1216f60e09d76761"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-banners",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"bannerTitle\": \"RRRRRRRRRRRRRRRRRR\",\r\n    \"bannerDesc\": \"RTTT\",\r\n    \"bannerImage\": \"RTTT\",\r\n    \"bannerBackgroundColor\": \"RTTT\",\r\n    \"bannerButtonLabel\": \"RTTT\",\r\n    \"bannerButtonColor\": \"RTTT\",\r\n    \"bannerButtonURL\": \"RTTT\",\r\n    \"Status\": true,\r\n    \"orderBy\":\"RTTT\",\r\n    \"bannerExpiry\": \"RTTT\",\r\n    \"categoryIDs\": [ \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\" ],\r\n    \"sellerID\": \"63f35454b08ce4c132fb2fdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/update-banners/63f72cf01216f60e09d7675b",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"update-banners",
+								"63f72cf01216f60e09d7675b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-banners",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/delete-banners/63f72cf01216f60e09d7675b",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"delete-banners",
+								"63f72cf01216f60e09d7675b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {

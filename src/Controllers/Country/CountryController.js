@@ -2,6 +2,7 @@ const CountryModel = require("../../Models/Country/CountryModel");
 const CreateCountryService = require("../../Services/Country/CreateCountryService");
 const DeleteCountryService = require("../../Services/Country/DeleteCountryService");
 const GetCountryService = require("../../Services/Country/GetCountryService");
+const GetFoodGroupByCountryService = require("../../Services/Country/GetFoodGroupByCountryService");
 const GetSingleCountryService = require("../../Services/Country/GetSingleCountryService");
 const UpdateCountryService = require("../../Services/Country/UpdateCountryService");
 
@@ -31,5 +32,11 @@ exports.UpdateCountry = async (req, res) => {
 //! Delete Country
 exports.DeleteCountry = async (req, res) => {
   let result = await DeleteCountryService(req, CountryModel);
+  res.status(200).json(result);
+};
+
+//! Get Food Group By Country
+exports.GetFoodGroupByCountry = async (req, res) => {
+  let result = await GetFoodGroupByCountryService(req, CountryModel);
   res.status(200).json(result);
 };
