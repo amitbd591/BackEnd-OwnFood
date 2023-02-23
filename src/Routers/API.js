@@ -30,6 +30,7 @@ const FoodDiaryController = require("../Controllers/FoodDiary/FoodDiaryControlle
 const BecomeSellerController = require("../Controllers/BecomeSeller/BecomeSellerController");
 const RiderController = require("../Controllers/Rider/RiderController");
 const FoodPhotoController = require("../Controllers/FoodPhoto/FoodPhotoController");
+const BannersAPIController = require("../Controllers/BannersAPI/BannersAPIController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -992,6 +993,43 @@ router.delete(
   "/delete-food-photo/:id",
   AuthVerifyMiddleware,
   FoodPhotoController.DeleteFoodPhoto
+);
+
+//!  ================== ****  Banners API  **** ==================
+
+//create Banners API
+router.post(
+  "/create-banners",
+  AuthVerifyMiddleware,
+  BannersAPIController.CreateBannersAPI
+);
+
+//get Banners API
+router.get(
+  "/get-banners",
+  AuthVerifyMiddleware,
+  BannersAPIController.GetBannersAPI
+);
+
+//get single Banners API
+router.get(
+  "/get-single-banners/:id",
+  AuthVerifyMiddleware,
+  BannersAPIController.GetSingleBannersAPI
+);
+
+//update Banners API
+router.post(
+  "/update-banners/:id",
+  AuthVerifyMiddleware,
+  BannersAPIController.UpdateBannersAPI
+);
+
+//delete Banners API
+router.delete(
+  "/delete-banners/:id",
+  AuthVerifyMiddleware,
+  BannersAPIController.DeleteBannersAPI
 );
 
 module.exports = router;
