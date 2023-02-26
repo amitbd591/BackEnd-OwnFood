@@ -15,7 +15,7 @@ const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
   });
 
   let mailOption = {
-    from: "Inventory Management <test@amitjs.com>",
+    from: "OwnFood Management <test@amitjs.com>",
     to: EmailTo,
     subject: EmailSubject,
     text: EmailText,
