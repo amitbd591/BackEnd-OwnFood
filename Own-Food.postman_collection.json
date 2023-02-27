@@ -183,6 +183,135 @@
 			]
 		},
 		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "create-users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"amitbd591@gmail.com\",\r\n    \"userFullName\": \"Raju\",\r\n    \"userPassword\": \"123456\",\r\n    \"userName\": \"Raju123\",\r\n    \"userEmail\": \"demo@gmail.com\",\r\n    \"userMobileNo\":\"01521122522\",\r\n    \"userPhoto\": \"img\",\r\n    \"userDateOfBirth\": \"12-02-1990\",\r\n    \"userGender\": \"male\",\r\n    \"latitude\": \"12540\",\r\n    \"longitude\": \"85444521\",\r\n    \"address\":\"CTG\",\r\n    \"zipCode\": \"4580\",\r\n    \"cityID\": \"63e8b32a798c4de2d1ba6c3d\",\r\n    \"regionID\": \"63e776fa6e49244ed17a4996\",\r\n    \"countryID\": \"63eb3c5af7ec2bc366654b88\",\r\n    \"userTermsAgreed\": true,\r\n    \"sellerStatus\": true,\r\n    \"riderStatus\": true,\r\n    \"rendingOTP\": \"202014\",\r\n    \"activatedOTP\":\"474522\",\r\n    \"userMobileVerified\":true,\r\n    \"userEmailVerified\": true,\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/create-users",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"create-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-users",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-single-users/63ecb0f485da03556cc83a65",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-single-users",
+								"63ecb0f485da03556cc83a65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"demo@gmail.com\",\r\n    \"userFullName\": \"RETTTT\",\r\n    \"userPassword\": \"123456\",\r\n    \"userName\": \"Raju123\",\r\n    \"userEmail\": \"demo@gmail.com\",\r\n    \"userMobileNo\":\"01521122522\",\r\n    \"userPhoto\": \"img\",\r\n    \"userDateOfBirth\": \"12-02-1990\",\r\n    \"userGender\": \"male\",\r\n    \"latitude\": \"12540\",\r\n    \"longitude\": \"85444521\",\r\n    \"address\":\"CTG\",\r\n    \"zipCode\": \"4580\",\r\n    \"cityID\": \"63e8b32a798c4de2d1ba6c3d\",\r\n    \"regionID\": \"63e776fa6e49244ed17a4996\",\r\n    \"countryID\": \"63eb3c5af7ec2bc366654b88\",\r\n    \"userTermsAgreed\": true,\r\n    \"sellerStatus\": true,\r\n    \"riderStatus\": true,\r\n    \"rendingOTP\": \"202014\",\r\n    \"activatedOTP\":\"474522\",\r\n    \"userMobileVerified\":true,\r\n    \"userEmailVerified\": true,\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/update-users/63ecaf6185da03556cc83a60",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"update-users",
+								"63ecaf6185da03556cc83a60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/delete-users/63ecb0f485da03556cc83a65",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"delete-users",
+								"63ecb0f485da03556cc83a65"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-password-verify-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/forget-password-verify-email/bijontalukder1247@gmail.com",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"forget-password-verify-email",
+								"bijontalukder1247@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Designation",
 			"item": [
 				{
@@ -952,6 +1081,23 @@
 							"path": [
 								"delete-country",
 								"63e4b9fab931d12e555b6541"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-food-group-by-country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-food-group-by-country",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-food-group-by-country"
 							]
 						}
 					},
@@ -2412,117 +2558,6 @@
 			]
 		},
 		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "create-users",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"demo1@gmail.com\",\r\n    \"userFullName\": \"Raju\",\r\n    \"userPassword\": \"123456\",\r\n    \"userName\": \"Raju123\",\r\n    \"userEmail\": \"demo@gmail.com\",\r\n    \"userMobileNo\":\"01521122522\",\r\n    \"userPhoto\": \"img\",\r\n    \"userDateOfBirth\": \"12-02-1990\",\r\n    \"userGender\": \"male\",\r\n    \"latitude\": \"12540\",\r\n    \"longitude\": \"85444521\",\r\n    \"address\":\"CTG\",\r\n    \"zipCode\": \"4580\",\r\n    \"cityID\": \"63e8b32a798c4de2d1ba6c3d\",\r\n    \"regionID\": \"63e776fa6e49244ed17a4996\",\r\n    \"countryID\": \"63eb3c5af7ec2bc366654b88\",\r\n    \"userTermsAgreed\": true,\r\n    \"sellerStatus\": true,\r\n    \"riderStatus\": true,\r\n    \"rendingOTP\": \"202014\",\r\n    \"activatedOTP\":\"474522\",\r\n    \"userMobileVerified\":true,\r\n    \"userEmailVerified\": true,\r\n    \"status\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/create-users",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"create-users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get-users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/get-users",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"get-users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get-single-users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/get-single-users/63ecb0f485da03556cc83a65",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"get-single-users",
-								"63ecb0f485da03556cc83a65"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update-users",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"demo@gmail.com\",\r\n    \"userFullName\": \"RETTTT\",\r\n    \"userPassword\": \"123456\",\r\n    \"userName\": \"Raju123\",\r\n    \"userEmail\": \"demo@gmail.com\",\r\n    \"userMobileNo\":\"01521122522\",\r\n    \"userPhoto\": \"img\",\r\n    \"userDateOfBirth\": \"12-02-1990\",\r\n    \"userGender\": \"male\",\r\n    \"latitude\": \"12540\",\r\n    \"longitude\": \"85444521\",\r\n    \"address\":\"CTG\",\r\n    \"zipCode\": \"4580\",\r\n    \"cityID\": \"63e8b32a798c4de2d1ba6c3d\",\r\n    \"regionID\": \"63e776fa6e49244ed17a4996\",\r\n    \"countryID\": \"63eb3c5af7ec2bc366654b88\",\r\n    \"userTermsAgreed\": true,\r\n    \"sellerStatus\": true,\r\n    \"riderStatus\": true,\r\n    \"rendingOTP\": \"202014\",\r\n    \"activatedOTP\":\"474522\",\r\n    \"userMobileVerified\":true,\r\n    \"userEmailVerified\": true,\r\n    \"status\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/update-users/63ecaf6185da03556cc83a60",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"update-users",
-								"63ecaf6185da03556cc83a60"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete-users",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/delete-users/63ecb0f485da03556cc83a65",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"delete-users",
-								"63ecb0f485da03556cc83a65"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Recipe",
 			"item": [
 				{
@@ -3298,6 +3333,10 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "OTP",
+			"item": []
 		}
 	],
 	"auth": {
