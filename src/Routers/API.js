@@ -54,6 +54,42 @@ router.delete("/delete-sub-admin/:id", SubAdminController.DeleteSubAdmin);
 // Update Sub-Admin Router
 router.post("/update-sub-admin/:id", SubAdminController.UpdateSubAdmin);
 
+//!  ================== ****  Users  **** ==================
+
+//create Users
+router.post("/create-users", AuthVerifyMiddleware, UsersController.CreateUsers);
+
+//get Users
+router.get("/get-users", AuthVerifyMiddleware, UsersController.GetUsers);
+
+//get single Users
+router.get(
+  "/get-single-users/:id",
+  AuthVerifyMiddleware,
+  UsersController.GetSingleUsers
+);
+
+//update single Users
+router.post(
+  "/update-users/:id",
+  AuthVerifyMiddleware,
+  UsersController.UpdateUsers
+);
+
+//delete single Users
+router.delete(
+  "/delete-users/:id",
+  AuthVerifyMiddleware,
+  UsersController.DeleteUsers
+);
+
+// verify Email Address For forget Password
+
+router.post(
+  "/forget-password-verify-email/:email",
+  UsersController.ForgetPassVerifyEmail
+);
+
 //!  ================== ****  Designation Service **** ==================
 // Create Designation Router
 router.post(
@@ -765,35 +801,6 @@ router.delete(
   "/delete-rider-review/:id",
   AuthVerifyMiddleware,
   RiderReviewController.DeleteRiderReview
-);
-
-//!  ================== ****  Users  **** ==================
-
-//create Users
-router.post("/create-users", AuthVerifyMiddleware, UsersController.CreateUsers);
-
-//get Users
-router.get("/get-users", AuthVerifyMiddleware, UsersController.GetUsers);
-
-//get single Users
-router.get(
-  "/get-single-users/:id",
-  AuthVerifyMiddleware,
-  UsersController.GetSingleUsers
-);
-
-//update single Users
-router.post(
-  "/update-users/:id",
-  AuthVerifyMiddleware,
-  UsersController.UpdateUsers
-);
-
-//delete single Users
-router.delete(
-  "/delete-users/:id",
-  AuthVerifyMiddleware,
-  UsersController.DeleteUsers
 );
 
 //!  ================== ****  Recipe  **** ==================

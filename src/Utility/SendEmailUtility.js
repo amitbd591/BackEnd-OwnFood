@@ -2,12 +2,12 @@ const nodemailer = require("nodemailer");
 
 const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
   let transporter = nodemailer.createTransport({
-    host: "mail.amitjs.com",
+    host: "mail.ownfood.com",
     port: 587,
     secure: false,
     auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASSWORD,
+      user: "info@ownfood.com",
+      pass: "HD@OWNFOOD9900",
     },
     tls: {
       rejectUnauthorized: false,
@@ -15,7 +15,7 @@ const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
   });
 
   let mailOption = {
-    from: "OwnFood Management <test@amitjs.com>",
+    from: "OwnFood Management <info@ownfood.com>",
     to: EmailTo,
     subject: EmailSubject,
     text: EmailText,
