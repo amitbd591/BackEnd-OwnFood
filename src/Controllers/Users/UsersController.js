@@ -6,6 +6,8 @@ const GetSingleUsersService = require("../../Services/Users/GetSingleUsersServic
 const GetUsersService = require("../../Services/Users/GetUsersService");
 const UpdateUsersService = require("../../Services/Users/UpdateUsersService");
 const VerifyForgetPassService = require("../../Services/Users/VerifyForgetPassService");
+const UserVerifyOTPService = require("../../Services/Users/UserVerifyOTPService");
+const UserResetPasswordService = require("../../Services/Users/UserResetPasswordService");
 
 //! Create Users
 exports.CreateUsers = async (req, res) => {
@@ -39,5 +41,17 @@ exports.GetSingleUsers = async (req, res) => {
 //! verify Email Address For forget Password
 exports.ForgetPassVerifyEmail = async (req, res) => {
   let result = await VerifyForgetPassService(req, UsersModel);
+  res.status(200).json(result);
+};
+
+//! User Verify OTP  Service Data Function
+exports.VerifyOTPService = async (req, res) => {
+  let result = await UserVerifyOTPService(req, OTPModel);
+  res.status(200).json(result);
+};
+
+//! User Reset Password Service Data Function
+exports.ResetPasswordService = async (req, res) => {
+  let result = await UserResetPasswordService(req, UsersModel);
   res.status(200).json(result);
 };

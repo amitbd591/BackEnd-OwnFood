@@ -1,7 +1,9 @@
 const express = require("express");
 const router = require("./src/Routers/API");
+const routerImg = require("./src/Routers/ImageUploadAPI");
 const app = new express();
 const bodyParser = require("body-parser");
+const multer = require("multer");
 
 // Security Middleware
 
@@ -11,7 +13,8 @@ const mongSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
 const cores = require("cors");
-
+const path = require("path");
+const fs = require("fs");
 // Database
 const mongoose = require("mongoose");
 
@@ -55,6 +58,53 @@ mongoose.connect(
 
 // Front ENd Tagging API
 app.use("/api/v1", router);
+app.use("/api/v1", routerImg);
+
+// ===================
+// const upload = multer({ dest: "uploads/" });
+let dir = "./uploads/users";
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, dir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, file.fieldname + "-" + uniqueSuffix + ".png");
+  },
+});
+
+const upload = multer({ storage: storage });
+
+app.post("/upload", upload.single("avatar"), function (req, res, next) {
+  const tempPath = req.file.path;
+
+  // if (!fs.existsSync(dir)) {
+  //   fs.mkdirSync(dir);
+  // }
+
+  const targetPath = path.join(__dirname, dir, req.file.filename);
+
+  if ((path.extname(req.file.originalname).toLowerCase() === ".png", "jpg")) {
+    fs.rename(tempPath, targetPath, (err) => {
+      if (err) return handleError(err, res);
+
+      res.status(200).json({
+        status: "Success",
+        data: req.file,
+        imgUrl: dir + "/" + req.file.filename,
+      });
+    });
+  } else {
+    fs.unlink(tempPath, (err) => {
+      if (err) return handleError(err, res);
+      res
+        .status(200)
+        .json({ status: "Fail", data: "Only .png, .jpg files are allowed!" });
+    });
+  }
+});
+
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Undefined Router Implement
 app.use("*", (req, res) => {

@@ -90,6 +90,16 @@ router.post(
   UsersController.ForgetPassVerifyEmail
 );
 
+// Verify OTP
+
+router.post(
+  "/verify-otp-service-forget-password/:email/:otp",
+  UsersController.VerifyOTPService
+);
+
+// Reset password
+router.post("/reset-password-service", UsersController.ResetPasswordService);
+
 //!  ================== ****  Designation Service **** ==================
 // Create Designation Router
 router.post(
