@@ -32,6 +32,7 @@ const RiderController = require("../Controllers/Rider/RiderController");
 const FoodPhotoController = require("../Controllers/FoodPhoto/FoodPhotoController");
 const BannersAPIController = require("../Controllers/BannersAPI/BannersAPIController");
 const HomePageSectionsController = require("../Controllers/HomePageSections/HomePageSectionsController");
+const HowDoWeDoController = require("../Controllers/HowDoWeDo/HowDoWeDoController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -1030,18 +1031,10 @@ router.post(
 );
 
 //get Banners API
-router.get(
-  "/get-banners",
-  AuthVerifyMiddleware,
-  BannersAPIController.GetBannersAPI
-);
+router.get("/get-banners", BannersAPIController.GetBannersAPI);
 
 //get single Banners API
-router.get(
-  "/get-single-banners/:id",
-  AuthVerifyMiddleware,
-  BannersAPIController.GetSingleBannersAPI
-);
+router.get("/get-single-banners/:id", BannersAPIController.GetSingleBannersAPI);
 
 //update Banners API
 router.post(
@@ -1092,6 +1085,43 @@ router.delete(
   "/delete-home-page-sections/:id",
   AuthVerifyMiddleware,
   HomePageSectionsController.DeleteHomePageSections
+);
+
+//!  ================== ****  How Do We DO   **** ==================
+
+// create how do we do
+router.post(
+  "/create-how-do-we-do",
+  AuthVerifyMiddleware,
+  HowDoWeDoController.CreateHowDoWeDo
+);
+
+//get how do we do
+router.get(
+  "/get-how-do-we-do",
+  AuthVerifyMiddleware,
+  HowDoWeDoController.GetHowDoWeDo
+);
+
+//get single how do we do
+router.get(
+  "/get-single-how-do-we-do/:id",
+  AuthVerifyMiddleware,
+  HowDoWeDoController.GetSingleHowDoWeDo
+);
+
+//update how do we do
+router.post(
+  "/update-how-do-we-do/:id",
+  AuthVerifyMiddleware,
+  HowDoWeDoController.UpdateHowDoWeDo
+);
+
+//delete how do we do
+router.delete(
+  "/delete-how-do-we-do/:id",
+  AuthVerifyMiddleware,
+  HowDoWeDoController.DeleteHowDoWeDo
 );
 
 module.exports = router;
