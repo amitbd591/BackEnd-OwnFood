@@ -31,6 +31,7 @@ const BecomeSellerController = require("../Controllers/BecomeSeller/BecomeSeller
 const RiderController = require("../Controllers/Rider/RiderController");
 const FoodPhotoController = require("../Controllers/FoodPhoto/FoodPhotoController");
 const BannersAPIController = require("../Controllers/BannersAPI/BannersAPIController");
+const HomePageSectionsController = require("../Controllers/HomePageSections/HomePageSectionsController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -1054,6 +1055,43 @@ router.delete(
   "/delete-banners/:id",
   AuthVerifyMiddleware,
   BannersAPIController.DeleteBannersAPI
+);
+
+//!  ================== ****  Home page section   **** ==================
+
+// create home page section
+router.post(
+  "/create-home-page-sections",
+  AuthVerifyMiddleware,
+  HomePageSectionsController.CreateHomepageSections
+);
+
+//get Home page section
+router.get(
+  "/get-home-page-sections",
+  AuthVerifyMiddleware,
+  HomePageSectionsController.GetHomePageSections
+);
+
+//get single home page section
+router.get(
+  "/get-single-home-page-sections/:id",
+  AuthVerifyMiddleware,
+  HomePageSectionsController.GetSingleHomePageSections
+);
+
+//update home page section
+router.post(
+  "/update-home-page-sections/:id",
+  AuthVerifyMiddleware,
+  HomePageSectionsController.UpdateHomePageSections
+);
+
+//delete home page section
+router.delete(
+  "/delete-home-page-sections/:id",
+  AuthVerifyMiddleware,
+  HomePageSectionsController.DeleteHomePageSections
 );
 
 module.exports = router;
