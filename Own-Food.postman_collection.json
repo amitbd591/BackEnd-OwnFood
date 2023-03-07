@@ -192,7 +192,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"amitbd591@gmail.com\",\r\n    \"userFullName\": \"Raju\",\r\n    \"userPassword\": \"123456\",\r\n    \"userName\": \"Raju123\",\r\n    \"userEmail\": \"demo@gmail.com\",\r\n    \"userMobileNo\":\"01521122522\",\r\n    \"userPhoto\": \"img\",\r\n    \"userDateOfBirth\": \"12-02-1990\",\r\n    \"userGender\": \"male\",\r\n    \"latitude\": \"12540\",\r\n    \"longitude\": \"85444521\",\r\n    \"address\":\"CTG\",\r\n    \"zipCode\": \"4580\",\r\n    \"cityID\": \"63e8b32a798c4de2d1ba6c3d\",\r\n    \"regionID\": \"63e776fa6e49244ed17a4996\",\r\n    \"countryID\": \"63eb3c5af7ec2bc366654b88\",\r\n    \"userTermsAgreed\": true,\r\n    \"sellerStatus\": true,\r\n    \"riderStatus\": true,\r\n    \"rendingOTP\": \"202014\",\r\n    \"activatedOTP\":\"474522\",\r\n    \"userMobileVerified\":true,\r\n    \"userEmailVerified\": true,\r\n    \"status\": true\r\n}",
+							"raw": "{\r\n    \"email\": \"amitbd590@gmail.com\",\r\n    \"userFullName\": \"Raju\",\r\n    \"userPassword\": \"123456\",\r\n    \"userName\": \"Raju123\",\r\n    \"userEmail\": \"demo@gmail.com\",\r\n    \"userMobileNo\":\"01521122522\",\r\n    \"userPhoto\": \"img\",\r\n    \"userDateOfBirth\": \"12-02-1990\",\r\n    \"userGender\": \"male\",\r\n    \"latitude\": \"12540\",\r\n    \"longitude\": \"85444521\",\r\n    \"address\":\"CTG\",\r\n    \"zipCode\": \"4580\",\r\n    \"cityID\": \"63e8b32a798c4de2d1ba6c3d\",\r\n    \"regionID\": \"63e776fa6e49244ed17a4996\",\r\n    \"countryID\": \"63eb3c5af7ec2bc366654b88\",\r\n    \"userTermsAgreed\": true,\r\n    \"sellerStatus\": true,\r\n    \"riderStatus\": true,\r\n    \"rendingOTP\": \"202014\",\r\n    \"activatedOTP\":\"474522\",\r\n    \"userMobileVerified\":true,\r\n    \"userEmailVerified\": true,\r\n    \"status\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -206,6 +206,32 @@
 							],
 							"path": [
 								"create-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login-users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"amitbd590@gmail.com\",\r\n    \"userPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/login-users",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"login-users"
 							]
 						}
 					},
@@ -297,13 +323,58 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/forget-password-verify-email/bijontalukder1247@gmail.com",
+							"raw": "{{BaseURL}}/forget-password-verify-email/amitbd591@gmail.com",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"forget-password-verify-email",
-								"bijontalukder1247@gmail.com"
+								"amitbd591@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-otp-service-forget-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/verify-otp-service-forget-password/bijontalukder1247@gmail.com/130709",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"verify-otp-service-forget-password",
+								"bijontalukder1247@gmail.com",
+								"130709"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password-service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bijontalukder1247@gmail.com\",\r\n    \"userPassword\": \"1230\",\r\n    \"otp\":\"130709\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/reset-password-service",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"reset-password-service"
 							]
 						}
 					},
@@ -3233,7 +3304,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n     \"bannerTitle\": \"RTTT\",\r\n    \"bannerDesc\": \"RTTT\",\r\n    \"bannerImage\": \"RTTT\",\r\n    \"bannerBackgroundColor\": \"RTTT\",\r\n    \"bannerButtonLabel\": \"RTTT\",\r\n    \"bannerButtonColor\": \"RTTT\",\r\n    \"bannerButtonURL\": \"RTTT\",\r\n    \"Status\": true,\r\n    \"orderBy\":\"RTTT\",\r\n    \"bannerExpiry\": \"RTTT\",\r\n    \"categoryIDs\": [ \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\" ],\r\n    \"sellerID\": \"63f35454b08ce4c132fb2fdf\"\r\n}",
+							"raw": "{\r\n     \"bannerTitle\": \"Chocolate Chip Cookies with Orange Marmalade\",\r\n    \"bannerDesc\": \"RTTT\",\r\n    \"bannerImage\": \"https://www.foodiesfeed.com/wp-content/uploads/2019/03/chocolate-chip-cookies-with-orange-marmalade.jpg\",\r\n    \"bannerBackgroundColor\": \"Pink\",\r\n    \"bannerButtonLabel\": \"More chocolate\",\r\n    \"bannerButtonColor\": \"RTTT\",\r\n    \"bannerButtonURL\": \"RTTT\",\r\n    \"Status\": true,\r\n    \"orderBy\":\"RTTT\",\r\n    \"bannerExpiry\": \"RTTT\",\r\n    \"categoryIDs\": [ \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\", \"63f35454b08ce4c132fb2fdf\" ],\r\n    \"sellerID\": \"63f35454b08ce4c132fb2fdf\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3337,6 +3408,260 @@
 		{
 			"name": "OTP",
 			"item": []
+		},
+		{
+			"name": "Home page section",
+			"item": [
+				{
+					"name": "create-home-page-sections",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"sectionTitle1\":\"indian food\",\r\n    \"sectionTitle2\":\"\",\r\n    \"sectionTitle3\":\"\",\r\n    \"sectionTitle4\":\"\",\r\n    \"sectionStyle\":\"Style2\",\r\n    \"sectionCategoriesColor\":[\"black\"],\r\n    \"orderBy\":3,\r\n    \"status\":true,\r\n    \"adImage\":\"url\",\r\n    \"adUrl\":\"url\",\r\n    \"adCode\":\"123213\",\r\n    \"displayLimit\":4,\r\n    \"sectionCategories1\":[\r\n        {\r\n            \"title\":\"indian\",\r\n            \"categoryID\":\"63de3c57f7e19896cb8799d1\"\r\n        }\r\n    ],\r\n    \"sectionCategories2\":[\r\n        {\r\n            \"title\":\"\"\r\n         \r\n        }\r\n    ],\r\n    \"sectionCategories3\":[\r\n        {\r\n            \"title\":\"\"\r\n           \r\n        }\r\n    ],\r\n    \"sectionCategories4\":[\r\n        {\r\n            \"title\":\"\"\r\n        \r\n        }\r\n    ]\r\n\r\n\r\n\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/create-home-page-sections",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"create-home-page-sections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-home-page-sections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-home-page-sections",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-home-page-sections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-home-page-sections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-single-home-page-sections/63fc713f35ad857675054fc7",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-single-home-page-sections",
+								"63fc713f35ad857675054fc7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-home-page-sections",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"sectionTitle1\":\"indian DDDDD\",\r\n    \"sectionTitle2\":\"\",\r\n    \"sectionTitle3\":\"\",\r\n    \"sectionTitle4\":\"\",\r\n    \"sectionStyle\":\"style1\",\r\n    \"sectionCategoriesColor\":[\"black\"],\r\n    \"orderBy\":3,\r\n    \"status\":true,\r\n    \"adImage\":\"url\",\r\n    \"adUrl\":\"url\",\r\n    \"adCode\":\"123213\",\r\n    \"displayLimit\":4,\r\n    \"sectionCategories1\":[\r\n        {\r\n            \"title\":\"indian\",\r\n            \"categoryID\":\"63de3c57f7e19896cb8799d1\"\r\n        }\r\n    ],\r\n    \"sectionCategories2\":[\r\n        {\r\n            \"title\":\"\"\r\n         \r\n        }\r\n    ],\r\n    \"sectionCategories3\":[\r\n        {\r\n            \"title\":\"\"\r\n           \r\n        }\r\n    ],\r\n    \"sectionCategories4\":[\r\n        {\r\n            \"title\":\"\"\r\n        \r\n        }\r\n    ]\r\n\r\n\r\n\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/update-home-page-sections/63fc713f35ad857675054fc7",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"update-home-page-sections",
+								"63fc713f35ad857675054fc7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-home-page-sections",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/delete-home-page-sections/63fc713f35ad857675054fc7",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"delete-home-page-sections",
+								"63fc713f35ad857675054fc7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "How Do We DO",
+			"item": [
+				{
+					"name": "create-how-do-we-do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Details\": \"url\",\r\n    \"beforeImage\": \"url\",\r\n    \"afterImage\": \"url\",\r\n    \"Status\": true\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/create-how-do-we-do",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"create-how-do-we-do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-how-do-we-do",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-how-do-we-do",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-how-do-we-do"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-how-do-we-do",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-single-how-do-we-do/63fc92e6dc016105a20af70d",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-single-how-do-we-do",
+								"63fc92e6dc016105a20af70d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-how-do-we-do",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Details\": \"urlcdddd\",\r\n    \"beforeImage\": \"url\",\r\n    \"afterImage\": \"url\",\r\n    \"Status\": true\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/update-how-do-we-do/63fc92e6dc016105a20af70d",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"update-how-do-we-do",
+								"63fc92e6dc016105a20af70d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-how-do-we-do",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/delete-how-do-we-do/63fc92e6dc016105a20af70d",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"delete-how-do-we-do",
+								"63fc92e6dc016105a20af70d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Extra",
+			"item": [
+				{
+					"name": "/image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/image.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BaseURL}}/uploads",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"uploads"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -3344,7 +3669,7 @@
 		"apikey": [
 			{
 				"key": "value",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzc4MzkxNjQsImRhdGEiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2NzUyNDcxNjR9.YwlQHCW4Dy206VLdSLkenGvcPbLpMCSVtk0AsBCqFGc",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODA1MDkxNDMsImRhdGEiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5MTcxNDN9.Enkf37kQgaqISHrFsVa5ZSNDt53isFgKV3IViDV4sDo",
 				"type": "string"
 			},
 			{

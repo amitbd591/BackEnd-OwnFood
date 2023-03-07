@@ -2,6 +2,7 @@ const CategoryModel = require("../../Models/Category/CategoryModel");
 const CreateCategoryService = require("../../Services/Category/CreateCategoryService");
 const DeleteCategoryService = require("../../Services/Category/DeleteCategoryService");
 const GetCategoryService = require("../../Services/Category/GetCategoryService");
+const GetFoodByCategoryService = require("../../Services/Category/GetFoodByCategoryService");
 const GetSingleCategoryService = require("../../Services/Category/GetSingleCategoryService");
 const UpdateCategoryService = require("../../Services/Category/UpdateCategoryService");
 
@@ -31,5 +32,11 @@ exports.UpdateCategory = async (req, res) => {
 //! Delete Category
 exports.DeleteCategory = async (req, res) => {
   let result = await DeleteCategoryService(req, CategoryModel);
+  res.status(200).json(result);
+};
+
+//! Get Food By Category Limit 4
+exports.GetFoodByCategory = async (req, res) => {
+  let result = await GetFoodByCategoryService(req, CategoryModel);
   res.status(200).json(result);
 };

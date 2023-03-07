@@ -59,7 +59,10 @@ router.post("/update-sub-admin/:id", SubAdminController.UpdateSubAdmin);
 //!  ================== ****  Users  **** ==================
 
 //create Users
-router.post("/create-users", AuthVerifyMiddleware, UsersController.CreateUsers);
+router.post("/create-users", UsersController.CreateUsers);
+
+// Super Admin Login Router
+router.post("/login-users", UsersController.Login);
 
 //get Users
 router.get("/get-users", AuthVerifyMiddleware, UsersController.GetUsers);
@@ -146,11 +149,7 @@ router.post(
 );
 
 // Get Category Router
-router.get(
-  "/get-category",
-  AuthVerifyMiddleware,
-  CategoryController.GetCategory
-);
+router.get("/get-category", CategoryController.GetCategory);
 // Get Single Category Router
 router.get(
   "/get-single-category/:id",
@@ -171,6 +170,9 @@ router.delete(
   AuthVerifyMiddleware,
   CategoryController.DeleteCategory
 );
+
+// Get Food By Category Limit 4
+router.get("/get-food-by-category/:id", CategoryController.GetFoodByCategory);
 
 //!  ================== ****  Sub Category **** ==================
 // Create subcategory Router
@@ -1062,7 +1064,6 @@ router.post(
 //get Home page section
 router.get(
   "/get-home-page-sections",
-  AuthVerifyMiddleware,
   HomePageSectionsController.GetHomePageSections
 );
 

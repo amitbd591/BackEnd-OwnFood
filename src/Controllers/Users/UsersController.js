@@ -8,13 +8,20 @@ const UpdateUsersService = require("../../Services/Users/UpdateUsersService");
 const VerifyForgetPassService = require("../../Services/Users/VerifyForgetPassService");
 const UserVerifyOTPService = require("../../Services/Users/UserVerifyOTPService");
 const UserResetPasswordService = require("../../Services/Users/UserResetPasswordService");
+const LoginUser = require("../../Services/Users/LoginUser");
 
 //! Create Users
 exports.CreateUsers = async (req, res) => {
   let result = await CreateUsersService(req, UsersModel);
-
   res.status(200).json(result);
 };
+
+//! Login Supper Admin
+exports.Login = async (req, res) => {
+  let result = await LoginUser(req, UsersModel);
+  res.status(200).json(result);
+};
+
 //! get Users
 exports.GetUsers = async (req, res) => {
   let result = await GetUsersService(req, UsersModel);
