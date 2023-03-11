@@ -24,6 +24,7 @@ const GetFoodByCategoryService = async (req, model) => {
             _id: 1,
 
             foodSlug: 1,
+            foodAdditionalInfo: 1,
 
             foodThumb: 1,
             foodVideo: 1,
