@@ -13,7 +13,7 @@ const GetFoodByCategoryService = async (req, model) => {
           localField: "_id",
           foreignField: "categoryID",
           as: "data",
-          pipeline: [{ $limit: 4 }],
+          pipeline: [{ $limit: 5 }],
         },
       },
       {
@@ -21,6 +21,7 @@ const GetFoodByCategoryService = async (req, model) => {
           data: {
             foodName: 1,
             foodImage: 1,
+            sellerID: 1,
             _id: 1,
 
             foodSlug: 1,

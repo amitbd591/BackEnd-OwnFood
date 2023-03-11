@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
-    sectionTitle1: { type: String },
-    sectionTitle2: { type: String },
-    sectionTitle3: { type: String },
-    sectionTitle4: { type: String },
+    sectionlabel1: { type: String },
+    sectionlabel2: { type: String },
+    sectionlabel3: { type: String },
+    sectionlabel4: { type: String },
     sectionStyle: { type: String },
     sectionCategoriesColor: { type: Array },
     orderBy: { type: Number },
@@ -18,26 +18,26 @@ const DataSchema = mongoose.Schema(
 
     sectionCategories1: [
       {
-        title: { type: String },
-        categoryID: { type: mongoose.Schema.Types.ObjectId },
+        label: { type: String },
+        value: { type: mongoose.Schema.Types.ObjectId }, //! Give Category Id here...
       },
     ],
     sectionCategories2: [
       {
-        title: { type: String },
-        categoryID: { type: mongoose.Schema.Types.ObjectId },
+        label: { type: String },
+        value: { type: mongoose.Schema.Types.ObjectId }, //! Give Category Id here...
       },
     ],
     sectionCategories3: [
       {
-        title: { type: String },
-        categoryID: { type: mongoose.Schema.Types.ObjectId },
+        label: { type: String },
+        value: { type: mongoose.Schema.Types.ObjectId }, //! Give Category Id here...
       },
     ],
     sectionCategories4: [
       {
-        title: { type: String },
-        categoryID: { type: mongoose.Schema.Types.ObjectId },
+        label: { type: String },
+        value: { type: mongoose.Schema.Types.ObjectId }, //! Give Category Id here...
       },
     ],
     createdBy: { type: String },
