@@ -2,6 +2,7 @@ const BecomeSellerModel = require("../../Models/BecomeSeller/BecomeSellerModel")
 const CreateBecomeSellerService = require("../../Services/BecomeSeller/CreateBecomeSellerService");
 const DeleteBecomeSellerService = require("../../Services/BecomeSeller/DeleteBecomeSellerService");
 const GetBecomeSellerService = require("../../Services/BecomeSeller/GetBecomeSellerService");
+const GetSellerWithFoodDetailsService = require("../../Services/BecomeSeller/GetSellerWithFoodDetailsService");
 const GetSingleBecomeSellerService = require("../../Services/BecomeSeller/GetSingleBecomeSellerService");
 const UpdateBecomeSellerService = require("../../Services/BecomeSeller/UpdateBecomeSellerService");
 
@@ -32,5 +33,11 @@ exports.UpdateBecomeSeller = async (req, res) => {
 //delete become a seller
 exports.DeleteBecomeSeller = async (req, res) => {
   let result = await DeleteBecomeSellerService(req, BecomeSellerModel);
+  res.status(200).json(result);
+};
+
+// Get Multiple Seller With Food Details
+exports.GetSellerWithFoodDetails = async (req, res) => {
+  let result = await GetSellerWithFoodDetailsService(req, BecomeSellerModel);
   res.status(200).json(result);
 };

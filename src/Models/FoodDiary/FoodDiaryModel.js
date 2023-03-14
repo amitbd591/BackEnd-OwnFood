@@ -13,6 +13,8 @@ const DataSchema = mongoose.Schema(
     blogDesc: { type: String },
     blogKeyWords: { type: Array },
     blogTags: { type: Array },
+    createdDate: { type: Date, default: Date.now() },
+    updatedDate: { type: Date, default: Date.now() },
   },
   { versionKey: false }
 );

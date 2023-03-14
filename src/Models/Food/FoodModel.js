@@ -7,6 +7,8 @@ const DataSchema = mongoose.Schema(
     foodTypeID: { type: mongoose.Schema.Types.ObjectId },
     categoryID: { type: mongoose.Schema.Types.ObjectId },
     cuisineCollection: { type: Array },
+    sellerImage: { type: String },
+    sellerName: { type: String },
     foodName: { type: String },
     foodSlug: { type: String },
     foodImage: { type: String },

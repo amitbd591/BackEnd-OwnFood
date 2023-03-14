@@ -58,7 +58,6 @@ mongoose.connect(
 
 // Front ENd Tagging API
 app.use("/api/v1", router);
-app.use("/api/v1", routerImg);
 
 // ===================
 // const upload = multer({ dest: "uploads/" });
@@ -104,7 +103,7 @@ app.post("/upload", upload.single("avatar"), function (req, res, next) {
   }
 });
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Undefined Router Implement
 app.use("*", (req, res) => {

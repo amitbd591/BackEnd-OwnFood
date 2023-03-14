@@ -7,9 +7,6 @@ const GetSingleFoodDiaryService = async (req, model) => {
       {
         $match: { _id: id },
       },
-      {
-        $match: {},
-      },
     ]);
     return { status: "Success", data: data };
   } catch (e) {

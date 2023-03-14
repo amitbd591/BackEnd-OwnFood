@@ -545,13 +545,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/get-single-category/63eb39684acc4d76451425d1",
+							"raw": "{{BaseURL}}/get-single-category/64046a615034b8b4c03658f9",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"get-single-category",
-								"63eb39684acc4d76451425d1"
+								"64046a615034b8b4c03658f9"
 							]
 						}
 					},
@@ -597,6 +597,24 @@
 							"path": [
 								"delete-category",
 								"63ddeed99220326059bdac45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-food-by-category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-food-by-category/64046a615034b8b4c03658f9",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-food-by-category",
+								"64046a615034b8b4c03658f9"
 							]
 						}
 					},
@@ -1630,7 +1648,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"customerID\" :\"63e7521cd7cf295bf793a466\",\r\n    \"sellerID\":\"63e7521cd7cf295bf793a466\",\r\n    \"foodTypeID\": \"63e7521cd7cf295bf793a466\",\r\n    \"categoryID\": \"63e72db7f295d85c4446d648\",\r\n    \"foodName\": \"Go\",\r\n    \"foodSlug\": \"http\",\r\n    \"foodImage\": \"img\",\r\n    \"foodThumb\": \"thum\",\r\n    \"foodVideo\": \"url\",\r\n    \"foodQty\":\"4\",\r\n    \"foodPrice\": \"550\",\r\n    \"cuisineCollection\":[\r\n        {\r\n            \"_id\": \"63e4c64cd07d1dc2b949c6ce\",\r\n            \"cuisineName\": \"EEEEEE\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c651d07d1dc2b949c6d0\",\r\n            \"cuisineName\": \"FFFF\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c655d07d1dc2b949c6d2\",\r\n            \"cuisineName\": \"DDD\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        }\r\n],\r\n    \"foodDiscountPrice\": \"120\",\r\n    \"foodDiscountPercentage\":\"30\",\r\n    \"foodDiscountStartDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodDiscountEndDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodPortionSize\": 7,\r\n    \"foodPortionSizeUnit\": \"20\",\r\n    \"foodMinimumOrderQty\": \"45\",\r\n    \"foodAdditionalInfo\": \"ointro\",\r\n    \"foodAdditionalTags\":[\"A\",\"B\",\"C\"],\r\n    \"foodExpiryTime\": \"Wednesday, February 8, 2023\",\r\n    \"customerDesireDeliveryTime\" : \"Wednesday, February 8, 2023\",\r\n    \"foodAvailableDays\":[\"A\",\"B\",\"C\"],\r\n    \"foodAvailableSameDaysEachWeek\": true,\r\n    \"foodOrderBeforeTime\": \"Wednesday, February 8, 2023\",\r\n    \"foodRating\": \"5\",\r\n    \"status\": true,\r\n   \r\n    \"foodLabel\": [\"A\",\"B\",\"C\"],\r\n    \"customerRequestedFoodQty\":  \"23\",\r\n    \"customerDesireDeliveryDate\": \"Wednesday, February 8, 2023\",\r\n    \"createdBy\":  \"Rahul\",\r\n    \"updatedBy\":  \"Raj\",\r\n    \"BSR\":1\r\n}",
+							"raw": "{   \r\n    \"customerID\" :\"63e7521cd7cf295bf793a466\",\r\n    \"sellerID\":\"63f331a8ce096ab67640ec8b\",\r\n    \"foodTypeID\": \"63e7521cd7cf295bf793a466\",\r\n    \"categoryID\": \"64046a615034b8b4c03658f9\",\r\n    \"foodName\": \"DDDDDDDDDDDDDDDDDD\",\r\n    \"sellerImage\":\"https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60\",\r\n    \"sellerName\":\"Alex\",\r\n    \"foodSlug\": \"http\",\r\n    \"foodImage\": \"https://www.foodiesfeed.com/wp-content/uploads/2021/10/carrot-cake-with-fresh-fruits.jpg\",\r\n    \"foodThumb\": \"https://www.foodiesfeed.com/wp-content/uploads/2021/10/carrot-cake-with-fresh-fruits.jpg\",\r\n    \"foodVideo\": \"url\",\r\n    \"foodQty\":\"4\",\r\n    \"foodPrice\": \"550\",\r\n    \"cuisineCollection\":[\r\n        {\r\n            \"_id\": \"63e4c64cd07d1dc2b949c6ce\",\r\n            \"cuisineName\": \"EEEEEE\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c651d07d1dc2b949c6d0\",\r\n            \"cuisineName\": \"FFFF\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c655d07d1dc2b949c6d2\",\r\n            \"cuisineName\": \"DDD\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        }\r\n],\r\n    \"foodDiscountPrice\": \"120\",\r\n    \"foodDiscountPercentage\":\"30\",\r\n    \"foodDiscountStartDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodDiscountEndDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodPortionSize\": 7,\r\n    \"foodPortionSizeUnit\": \"20\",\r\n    \"foodMinimumOrderQty\": \"45\",\r\n    \"foodAdditionalInfo\": \"ointro\",\r\n    \"foodAdditionalTags\":[\"A\",\"B\",\"C\"],\r\n    \"foodExpiryTime\": \"Wednesday, February 8, 2023\",\r\n    \"customerDesireDeliveryTime\" : \"Wednesday, February 8, 2023\",\r\n    \"foodAvailableDays\":[\"A\",\"B\",\"C\"],\r\n    \"foodAvailableSameDaysEachWeek\": true,\r\n    \"foodOrderBeforeTime\": \"Wednesday, February 8, 2023\",\r\n    \"foodRating\": \"5\",\r\n    \"status\": true,\r\n   \r\n    \"foodLabel\": [\"A\",\"B\",\"C\"],\r\n    \"customerRequestedFoodQty\":  \"23\",\r\n    \"customerDesireDeliveryDate\": \"Wednesday, February 8, 2023\",\r\n    \"createdBy\":  \"Rahul\",\r\n    \"updatedBy\":  \"Raj\",\r\n    \"BSR\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1691,7 +1709,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"customerID\" :\"63e7521cd7cf295bf793a466\",\r\n    \"sellerID\":\"63e7521cd7cf295bf793a466\",\r\n    \"foodTypeID\": \"63e7521cd7cf295bf793a466\",\r\n    \"categoryID\": \"63e72db7f295d85c4446d648\",\r\n    \"foodName\": \"GoFFFF\",\r\n    \"foodSlug\": \"http\",\r\n    \"foodImage\": \"img\",\r\n    \"foodThumb\": \"thum\",\r\n    \"foodVideo\": \"url\",\r\n    \"foodQty\":\"4\",\r\n    \"foodPrice\": \"550\",\r\n    \"cuisineCollection\":[\r\n        {\r\n            \"_id\": \"63e4c64cd07d1dc2b949c6ce\",\r\n            \"cuisineName\": \"EEEEEE\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c651d07d1dc2b949c6d0\",\r\n            \"cuisineName\": \"FFFF\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c655d07d1dc2b949c6d2\",\r\n            \"cuisineName\": \"DDD\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        }\r\n],\r\n    \"foodDiscountPrice\": \"120\",\r\n    \"foodDiscountPercentage\":\"30\",\r\n    \"foodDiscountStartDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodDiscountEndDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodPortionSize\": 7,\r\n    \"foodPortionSizeUnit\": \"20\",\r\n    \"foodMinimumOrderQty\": \"45\",\r\n    \"foodAdditionalInfo\": \"ointro\",\r\n    \"foodAdditionalTags\":[\"A\",\"B\",\"C\"],\r\n    \"foodExpiryTime\": \"Wednesday, February 8, 2023\",\r\n    \"customerDesireDeliveryTime\" : \"Wednesday, February 8, 2023\",\r\n    \"foodAvailableDays\":[\"A\",\"B\",\"C\"],\r\n    \"foodAvailableSameDaysEachWeek\": true,\r\n    \"foodOrderBeforeTime\": \"Wednesday, February 8, 2023\",\r\n    \"foodRating\": \"5\",\r\n    \"status\": true,\r\n   \r\n    \"foodLabel\": [\"A\",\"B\",\"C\"],\r\n    \"customerRequestedFoodQty\":  \"23\",\r\n    \"customerDesireDeliveryDate\": \"Wednesday, February 8, 2023\",\r\n    \"createdBy\":  \"Rahul\",\r\n    \"updatedBy\":  \"Raj\",\r\n    \"BSR\":1\r\n}",
+							"raw": "{   \r\n    \"customerID\" :\"63e7521cd7cf295bf793a466\",\r\n    \"sellerID\":\"63e7521cd7cf295bf793a466\",\r\n    \"foodTypeID\": \"63e7521cd7cf295bf793a466\",\r\n    \"categoryID\": \"640c2f5a5c59c840eb178d90\",\r\n    \"foodName\": \"GoFFFF\",\r\n    \"sellerImage\":\"https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60\",\r\n    \"sellerName\":\"Alex\",\r\n    \"foodSlug\": \"http\",\r\n    \"foodImage\": \"img\",\r\n    \"foodThumb\": \"thum\",\r\n    \"foodVideo\": \"url\",\r\n    \"foodQty\":\"4\",\r\n    \"foodPrice\": \"550\",\r\n    \"cuisineCollection\":[\r\n        {\r\n            \"_id\": \"63e4c64cd07d1dc2b949c6ce\",\r\n            \"cuisineName\": \"EEEEEE\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c651d07d1dc2b949c6d0\",\r\n            \"cuisineName\": \"FFFF\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        },\r\n        {\r\n            \"_id\": \"63e4c655d07d1dc2b949c6d2\",\r\n            \"cuisineName\": \"DDD\",\r\n            \"cuisineImage\": \"url\",\r\n            \"cuisineImageThumb\": \"url\",\r\n            \"status\": true,\r\n            \"createdBy\": \"Rahul\",\r\n            \"createdDate\": \"2023-02-09T09:47:48.783Z\",\r\n            \"updatedBy\": \"RTY\",\r\n            \"updatedDate\": \"2023-02-09T09:47:48.783Z\"\r\n        }\r\n],\r\n    \"foodDiscountPrice\": \"120\",\r\n    \"foodDiscountPercentage\":\"30\",\r\n    \"foodDiscountStartDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodDiscountEndDate\": \"Wednesday, February 8, 2023\",\r\n    \"foodPortionSize\": 7,\r\n    \"foodPortionSizeUnit\": \"20\",\r\n    \"foodMinimumOrderQty\": \"45\",\r\n    \"foodAdditionalInfo\": \"ointro\",\r\n    \"foodAdditionalTags\":[\"A\",\"B\",\"C\"],\r\n    \"foodExpiryTime\": \"Wednesday, February 8, 2023\",\r\n    \"customerDesireDeliveryTime\" : \"Wednesday, February 8, 2023\",\r\n    \"foodAvailableDays\":[\"A\",\"B\",\"C\"],\r\n    \"foodAvailableSameDaysEachWeek\": true,\r\n    \"foodOrderBeforeTime\": \"Wednesday, February 8, 2023\",\r\n    \"foodRating\": \"5\",\r\n    \"status\": true,\r\n   \r\n    \"foodLabel\": [\"A\",\"B\",\"C\"],\r\n    \"customerRequestedFoodQty\":  \"23\",\r\n    \"customerDesireDeliveryDate\": \"Wednesday, February 8, 2023\",\r\n    \"createdBy\":  \"Rahul\",\r\n    \"updatedBy\":  \"Raj\",\r\n    \"BSR\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1699,13 +1717,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/update-food/63e760ba7dfb72bf9f7d3083",
+							"raw": "{{BaseURL}}/update-food/640c30ac5c59c840eb178daa",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"update-food",
-								"63e760ba7dfb72bf9f7d3083"
+								"640c30ac5c59c840eb178daa"
 							]
 						}
 					},
@@ -3069,6 +3087,32 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get-seller-with-food-details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":[\"63f331a8ce096ab67640ec8b\", \"640eeeb3be0a98ae3996d83b\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/get-seller-with-food-details",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-seller-with-food-details"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -3419,7 +3463,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n      \"sectionTitle1\":\"indian food\",\r\n    \"sectionTitle2\":\"\",\r\n    \"sectionTitle3\":\"\",\r\n    \"sectionTitle4\":\"\",\r\n    \"sectionStyle\":\"Style2\",\r\n    \"sectionCategoriesColor\":[\"black\"],\r\n    \"orderBy\":3,\r\n    \"status\":true,\r\n    \"adImage\":\"url\",\r\n    \"adUrl\":\"url\",\r\n    \"adCode\":\"123213\",\r\n    \"displayLimit\":4,\r\n    \"sectionCategories1\":[\r\n        {\r\n            \"title\":\"indian\",\r\n            \"categoryID\":\"63de3c57f7e19896cb8799d1\"\r\n        }\r\n    ],\r\n    \"sectionCategories2\":[\r\n        {\r\n            \"title\":\"\"\r\n         \r\n        }\r\n    ],\r\n    \"sectionCategories3\":[\r\n        {\r\n            \"title\":\"\"\r\n           \r\n        }\r\n    ],\r\n    \"sectionCategories4\":[\r\n        {\r\n            \"title\":\"\"\r\n        \r\n        }\r\n    ]\r\n\r\n\r\n\r\n}\r\n\r\n\r\n",
+							"raw": "{\r\n      \"sectionTitle1\":\"indian food\",\r\n    \"sectionTitle2\":\"\",\r\n    \"sectionTitle3\":\"\",\r\n    \"sectionTitle4\":\"\",\r\n    \"sectionStyle\":\"Style2\",\r\n    \"sectionCategoriesColor\":[\"black\"],\r\n    \"orderBy\":3,\r\n    \"status\":true,\r\n    \"adImage\":\"url\",\r\n    \"adUrl\":\"url\",\r\n    \"adCode\":\"123213\",\r\n    \"displayLimit\":4,\r\n    \"sectionCategories1\":[\r\n        {\r\n            \"label\":\"\"\r\n        }\r\n    ],\r\n    \"sectionCategories2\":[\r\n      {\r\n            \"label\":\"indian\",\r\n            \"value\":\"63de3c57f7e19896cb8799d1\"\r\n        }\r\n    ],\r\n    \"sectionCategories3\":[\r\n    {\r\n            \"label\":\"\"\r\n        }\r\n    ],\r\n    \"sectionCategories4\":[\r\n      {\r\n            \"label\":\"\"\r\n        }\r\n    ]\r\n\r\n\r\n\r\n}\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3506,13 +3550,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/delete-home-page-sections/63fc713f35ad857675054fc7",
+							"raw": "{{BaseURL}}/delete-home-page-sections/640c2223162bcfe7d1cbf8dc",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"delete-home-page-sections",
-								"63fc713f35ad857675054fc7"
+								"640c2223162bcfe7d1cbf8dc"
 							]
 						}
 					},
@@ -3645,17 +3689,241 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/HP/Downloads/image.png"
+									"src": "/C:/Users/HP/Downloads/Rlogical-Blog-Images-thumbnail-1.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{BaseURL}}/uploads",
+							"raw": "http://localhost:5000/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CircleTypeFood",
+			"item": [
+				{
+					"name": "create-circle-type-food",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n    \"circleType\":\"name\",\r\n    \"circleCategoryID\":[\r\n        {\r\n            \"categoryID\":\"640d7fa571e172d1083652a7\"\r\n        }\r\n    ],\r\n    \"circleCountryID\":[\r\n        {\r\n            \"countryID\":\"640d7fa571e172d1083652a7\"\r\n        }\r\n    ],\r\n    \"circleLimit\":5,\r\n    \"circleByReview\":true,\r\n    \"bestSellingFood\":false,\r\n    \"circleFoods\":[\"array\"],\r\n    \"circleSellerID\":[\r\n        {\r\n            \"sellerID\":\"640d7fa571e172d1083652a7\"\r\n        }\r\n    ]\r\n\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/create-circle-type-food",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
-								"uploads"
+								"create-circle-type-food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-circle-type-food",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-circle-type-food",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-circle-type-food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-circle-type-food",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-single-circle-type-food/640d7fa571e172d1083652a7",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-single-circle-type-food",
+								"640d7fa571e172d1083652a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-circle-type-food",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n    \"circleType\":\"nameDDDDDD\",\r\n    \"circleCategoryID\":[\r\n        {\r\n            \"categoryID\":\"640d7fa571e172d1083652a7\"\r\n        }\r\n    ],\r\n    \"circleCountryID\":[\r\n        {\r\n            \"countryID\":\"640d7fa571e172d1083652a7\"\r\n        }\r\n    ],\r\n    \"circleLimit\":5,\r\n    \"circleByReview\":true,\r\n    \"bestSellingFood\":false,\r\n    \"circleFoods\":[\"array\"],\r\n    \"circleSellerID\":[\r\n        {\r\n            \"sellerID\":\"640d7fa571e172d1083652a7\"\r\n        }\r\n    ]\r\n\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/update-circle-type-food/640d7fa571e172d1083652a7",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"update-circle-type-food",
+								"640d7fa571e172d1083652a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-circle-type-food",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/delete-circle-type-food/640d7fa571e172d1083652a7",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"delete-circle-type-food",
+								"640d7fa571e172d1083652a7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buyer question and answear",
+			"item": [
+				{
+					"name": "create-buyer-question-answear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"quesTitle\": \"question\",\r\n    \"quesByBuyerID\": \"640c2f815c59c840eb178d95\",\r\n    \"quesByBuyerName\": \"nam111\",\r\n    \"quesAnswers\": [\r\n      {\r\n        \"Answer\": \"ans\",\r\n        \"answerByBuyerID\": \"640c2f815c59c840eb178d95\",\r\n        \"answerByBuyerName\": \"asdfa\"\r\n       \r\n      }\r\n    ],\r\n\r\n    \"FoodID\": \"640c2f815c59c840eb178d95\"\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/create-buyer-question-answear",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"create-buyer-question-answear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-buyer-question-answear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-buyer-question-answear",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-buyer-question-answear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-buyer-question-answear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-single-buyer-question-answear/641055c649052bffb6e54aff",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-single-buyer-question-answear",
+								"641055c649052bffb6e54aff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-buyer-question-answear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"quesTitle\": \"quesDDDDDDtion\",\r\n    \"quesByBuyerID\": \"640c2f815c59c840eb178d95\",\r\n    \"quesByBuyerName\": \"nam111\",\r\n    \"quesAnswers\": [\r\n      {\r\n        \"Answer\": \"ans\",\r\n        \"answerByBuyerID\": \"640c2f815c59c840eb178d95\",\r\n        \"answerByBuyerName\": \"asdfa\"\r\n       \r\n      }\r\n    ],\r\n\r\n    \"FoodID\": \"640c2f815c59c840eb178d95\"\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/update-buyer-question-answear/641055c649052bffb6e54aff",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"update-buyer-question-answear",
+								"641055c649052bffb6e54aff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-buyer-question-answear",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/delete-buyer-question-answear/641055c649052bffb6e54aff",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"delete-buyer-question-answear",
+								"641055c649052bffb6e54aff"
 							]
 						}
 					},

@@ -33,6 +33,8 @@ const FoodPhotoController = require("../Controllers/FoodPhoto/FoodPhotoControlle
 const BannersAPIController = require("../Controllers/BannersAPI/BannersAPIController");
 const HomePageSectionsController = require("../Controllers/HomePageSections/HomePageSectionsController");
 const HowDoWeDoController = require("../Controllers/HowDoWeDo/HowDoWeDoController");
+const CircleTypeFoodController = require("../Controllers/CircleTypeFood/CircleTypeFoodController");
+const BuyerQuestionsAndAnswearController = require("../Controllers/BuyerQuestionsAndAnswear/BuyerQuestionsAndAnswearController");
 
 //!  ================== ****  Super Admin **** ==================
 // Super Admin Registration Router
@@ -893,11 +895,7 @@ router.post(
 );
 
 //get food diary
-router.get(
-  "/get-food-diary",
-  AuthVerifyMiddleware,
-  FoodDiaryController.GetFoodDiary
-);
+router.get("/get-food-diary", FoodDiaryController.GetFoodDiary);
 
 //get single food diary
 router.get(
@@ -955,6 +953,12 @@ router.delete(
   "/delete-become-seller/:id",
   AuthVerifyMiddleware,
   BecomeSellerController.DeleteBecomeSeller
+);
+
+//Get Seller With FoodDetails
+router.post(
+  "/get-seller-with-food-details",
+  BecomeSellerController.GetSellerWithFoodDetails
 );
 
 //!  ================== ****  Rider  **** ==================
@@ -1123,6 +1127,80 @@ router.delete(
   "/delete-how-do-we-do/:id",
   AuthVerifyMiddleware,
   HowDoWeDoController.DeleteHowDoWeDo
+);
+
+//!  ================== ****  Circle Type Food   **** ==================
+
+// create circle type food
+router.post(
+  "/create-circle-type-food",
+  AuthVerifyMiddleware,
+  CircleTypeFoodController.CreateCircleTypeFood
+);
+
+//get circle type food
+router.get(
+  "/get-circle-type-food",
+  AuthVerifyMiddleware,
+  CircleTypeFoodController.GetCircleTypeFood
+);
+
+//get single circle type food
+router.get(
+  "/get-single-circle-type-food/:id",
+  AuthVerifyMiddleware,
+  CircleTypeFoodController.GetSingleCircleTypeFood
+);
+
+//update circle type food
+router.post(
+  "/update-circle-type-food/:id",
+  AuthVerifyMiddleware,
+  CircleTypeFoodController.UpdateCircleTypeFood
+);
+
+//delete circle type food
+router.delete(
+  "/delete-circle-type-food/:id",
+  AuthVerifyMiddleware,
+  CircleTypeFoodController.DeleteCircleTypeFood
+);
+
+//!  ================== ****  Buyer question and answear  **** ==================
+
+// create buyer question and answear
+router.post(
+  "/create-buyer-question-answear",
+  AuthVerifyMiddleware,
+  BuyerQuestionsAndAnswearController.CreateBuyerQuestionsAndAnswear
+);
+
+//get buyer question and answear
+router.get(
+  "/get-buyer-question-answear",
+  AuthVerifyMiddleware,
+  BuyerQuestionsAndAnswearController.GetBuyerQuestionsAndAnswear
+);
+
+//get single buyer question and answear
+router.get(
+  "/get-single-buyer-question-answear/:id",
+  AuthVerifyMiddleware,
+  BuyerQuestionsAndAnswearController.GetSingleBuyerQuestionsAndAnswear
+);
+
+//update  buyer question and answear
+router.post(
+  "/update-buyer-question-answear/:id",
+  AuthVerifyMiddleware,
+  BuyerQuestionsAndAnswearController.UpdateBuyerQuestionsAndAnswear
+);
+
+//delete  buyer question and answear
+router.delete(
+  "/delete-buyer-question-answear/:id",
+  AuthVerifyMiddleware,
+  BuyerQuestionsAndAnswearController.DeleteBuyerQuestionsAndAnswear
 );
 
 module.exports = router;
