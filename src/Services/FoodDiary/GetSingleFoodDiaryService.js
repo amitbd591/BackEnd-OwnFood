@@ -7,6 +7,14 @@ const GetSingleFoodDiaryService = async (req, model) => {
       {
         $match: { _id: id },
       },
+      {
+        $lookup: {
+          from: "foods",
+          localField: "_id",
+          foreignField: "sellerID",
+          as: "foodData",
+        },
+      },
     ]);
     return { status: "Success", data: data };
   } catch (e) {

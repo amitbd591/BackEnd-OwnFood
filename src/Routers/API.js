@@ -173,8 +173,11 @@ router.delete(
   CategoryController.DeleteCategory
 );
 
-// Get Food By Category Limit 4
-router.get("/get-food-by-category/:id", CategoryController.GetFoodByCategory);
+// Get Food By Category with Limit
+router.get(
+  "/get-food-by-category/:id/:limit",
+  CategoryController.GetFoodByCategory
+);
 
 //!  ================== ****  Sub Category **** ==================
 // Create subcategory Router
@@ -900,7 +903,6 @@ router.get("/get-food-diary", FoodDiaryController.GetFoodDiary);
 //get single food diary
 router.get(
   "/get-single-food-diary/:id",
-  AuthVerifyMiddleware,
   FoodDiaryController.GetSingleFoodDiary
 );
 

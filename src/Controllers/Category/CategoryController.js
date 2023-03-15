@@ -35,7 +35,7 @@ exports.DeleteCategory = async (req, res) => {
   res.status(200).json(result);
 };
 
-//! Get Food By Category Limit 4
+//! Get Food By Category Limit
 exports.GetFoodByCategory = async (req, res) => {
   let result = await GetFoodByCategoryService(req, CategoryModel);
   res.status(200).json(result);

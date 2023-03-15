@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const GetFoodByCategoryService = async (req, model) => {
   try {
     let id = mongoose.Types.ObjectId(req.params.id);
+    var limit = req.params.limit;
+    if (limit === "0") {
+      limit = 1000;
+    }
     let data = await model.aggregate([
       {
         $match: { _id: id },
@@ -13,7 +17,7 @@ const GetFoodByCategoryService = async (req, model) => {
           localField: "_id",
           foreignField: "categoryID",
           as: "data",
-          pipeline: [{ $limit: 5 }],
+          pipeline: [{ $limit: Number(limit) }],
         },
       },
       {
