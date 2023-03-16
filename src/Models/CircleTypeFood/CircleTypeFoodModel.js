@@ -6,15 +6,15 @@ const DataSchema = mongoose.Schema(
     circleCategoryID: [
       {
         _id: false,
-        categoryID: { type: mongoose.Schema.Types.ObjectId },
+        label: { type: String },
+        value: { type: mongoose.Schema.Types.ObjectId },
       },
     ],
     circleCountryID: [
       {
         _id: false,
-        countryID: { type: mongoose.Schema.Types.ObjectId },
-        countryName: { type: String },
-        countryFlag: { type: String },
+        label: { type: String },
+        value: { type: mongoose.Schema.Types.ObjectId },
       },
     ],
     circleLimit: { type: Number },
@@ -24,9 +24,8 @@ const DataSchema = mongoose.Schema(
     circleSellerID: [
       {
         _id: false,
-        sellerID: { type: mongoose.Schema.Types.ObjectId },
-        sellerName: { type: String },
-        sellerImage: { type: String },
+        label: { type: String },
+        value: { type: mongoose.Schema.Types.ObjectId },
       },
     ],
   },

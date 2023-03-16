@@ -1141,11 +1141,7 @@ router.post(
 );
 
 //get circle type food
-router.get(
-  "/get-circle-type-food",
-  AuthVerifyMiddleware,
-  CircleTypeFoodController.GetCircleTypeFood
-);
+router.get("/get-circle-type-food", CircleTypeFoodController.GetCircleTypeFood);
 
 //get single circle type food
 router.get(
