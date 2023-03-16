@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
-    sectionlabel1: { type: String },
-    sectionlabel2: { type: String },
-    sectionlabel3: { type: String },
-    sectionlabel4: { type: String },
+    sectionTitle1: { type: String },
+    sectionTitle2: { type: String },
+    sectionTitle3: { type: String },
+    sectionTitle4: { type: String },
     sectionStyle: { type: String },
     sectionCategoriesColor: { type: Array },
     orderBy: { type: Number },
