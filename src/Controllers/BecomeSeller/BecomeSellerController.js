@@ -2,6 +2,8 @@ const BecomeSellerModel = require("../../Models/BecomeSeller/BecomeSellerModel")
 const CreateBecomeSellerService = require("../../Services/BecomeSeller/CreateBecomeSellerService");
 const DeleteBecomeSellerService = require("../../Services/BecomeSeller/DeleteBecomeSellerService");
 const GetBecomeSellerService = require("../../Services/BecomeSeller/GetBecomeSellerService");
+const GetFoodBySellerService = require("../../Services/BecomeSeller/GetFoodBySellerService");
+const GetOrderBySingleSellerService = require("../../Services/BecomeSeller/GetOrderBySingleSellerService");
 const GetSellerWithFoodDetailsService = require("../../Services/BecomeSeller/GetSellerWithFoodDetailsService");
 const GetSingleBecomeSellerService = require("../../Services/BecomeSeller/GetSingleBecomeSellerService");
 const UpdateBecomeSellerService = require("../../Services/BecomeSeller/UpdateBecomeSellerService");
@@ -39,5 +41,17 @@ exports.DeleteBecomeSeller = async (req, res) => {
 // Get Multiple Seller With Food Details
 exports.GetSellerWithFoodDetails = async (req, res) => {
   let result = await GetSellerWithFoodDetailsService(req, BecomeSellerModel);
+  res.status(200).json(result);
+};
+
+//get food limit by seller
+exports.GetFoodBySeller = async (req, res) => {
+  let result = await GetFoodBySellerService(req, BecomeSellerModel);
+  res.status(200).json(result);
+};
+
+//get order by single seller
+exports.GetOrderBySingleSeller = async (req, res) => {
+  let result = await GetOrderBySingleSellerService(req, BecomeSellerModel);
   res.status(200).json(result);
 };

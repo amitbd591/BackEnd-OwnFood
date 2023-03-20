@@ -538,6 +538,12 @@ router.get(
   CountryController.GetFoodGroupByCountry
 );
 
+//Get country by admin selected
+router.post(
+  "/get-country-by-admin-selected",
+  CountryController.GetCountryByAdminSelected
+);
+
 //!  ================== ****  Region_State  **** ==================
 
 //create Region_State
@@ -832,7 +838,7 @@ router.post(
 );
 
 //get recipe
-router.get("/get-recipe", AuthVerifyMiddleware, RecipeController.GetRecipe);
+router.get("/get-recipe", RecipeController.GetRecipe);
 
 //get single recipe
 router.get(
@@ -961,6 +967,20 @@ router.delete(
 router.post(
   "/get-seller-with-food-details",
   BecomeSellerController.GetSellerWithFoodDetails
+);
+
+//get food limit by seller
+router.get(
+  "/get-food-by-seller/:id/:limit",
+  AuthVerifyMiddleware,
+  BecomeSellerController.GetFoodBySeller
+);
+
+//get all order by single seller
+router.get(
+  "/get-order-by-single-seller/:id",
+  AuthVerifyMiddleware,
+  BecomeSellerController.GetOrderBySingleSeller
 );
 
 //!  ================== ****  Rider  **** ==================
@@ -1104,16 +1124,11 @@ router.post(
 );
 
 //get how do we do
-router.get(
-  "/get-how-do-we-do",
-  AuthVerifyMiddleware,
-  HowDoWeDoController.GetHowDoWeDo
-);
+router.get("/get-how-do-we-do", HowDoWeDoController.GetHowDoWeDo);
 
 //get single how do we do
 router.get(
   "/get-single-how-do-we-do/:id",
-  AuthVerifyMiddleware,
   HowDoWeDoController.GetSingleHowDoWeDo
 );
 
