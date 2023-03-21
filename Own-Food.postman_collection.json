@@ -603,18 +603,31 @@
 					"response": []
 				},
 				{
-					"name": "get-food-by-category",
+					"name": "get-food-by-category by limit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{BaseURL}}/get-food-by-category/64046a615034b8b4c03658f9",
+							"raw": "{{BaseURL}}/get-food-by-category/640c2f585c59c840eb178d8e/0",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"get-food-by-category",
-								"64046a615034b8b4c03658f9"
+								"640c2f585c59c840eb178d8e",
+								"0"
 							]
 						}
 					},
@@ -1187,6 +1200,32 @@
 							],
 							"path": [
 								"get-food-group-by-country"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get country by admin selected",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":[\"64101b05e20c987d3f511ac4\", \"64101b38e20c987d3f511acd\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/get-country-by-admin-selected",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-country-by-admin-selected"
 							]
 						}
 					},
@@ -3109,6 +3148,43 @@
 							],
 							"path": [
 								"get-seller-with-food-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-food-by-seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-food-by-seller/64101b05e20c987d3f511ac4/0",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-food-by-seller",
+								"64101b05e20c987d3f511ac4",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-order-by-single-seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/get-order-by-single-seller/64101b05e20c987d3f511ac4",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"get-order-by-single-seller",
+								"64101b05e20c987d3f511ac4"
 							]
 						}
 					},
