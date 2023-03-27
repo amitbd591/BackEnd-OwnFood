@@ -9,6 +9,7 @@ const DataSchema = mongoose.Schema(
     foodID: { type: mongoose.Schema.Types.ObjectId },
     orderID: { type: mongoose.Schema.Types.ObjectId },
     customerID: { type: mongoose.Schema.Types.ObjectId },
+    sellerID: { type: mongoose.Schema.Types.ObjectId },
   },
   {
     versionKey: false,

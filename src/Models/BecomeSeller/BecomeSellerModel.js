@@ -5,6 +5,7 @@ const DataSchema = mongoose.Schema(
     countryID: { type: mongoose.Schema.Types.ObjectId },
     regionID: { type: mongoose.Schema.Types.ObjectId },
     cityID: { type: mongoose.Schema.Types.ObjectId },
+    aboutSeller: { type: String },
     sellerNationalityID: { type: String },
     sellerNationalityByBornID: { type: String },
     sellerProfilePhoto: { type: String },

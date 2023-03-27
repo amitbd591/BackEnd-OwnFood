@@ -6,6 +6,7 @@ const GetFoodBySellerService = require("../../Services/BecomeSeller/GetFoodBySel
 const GetOrderBySingleSellerService = require("../../Services/BecomeSeller/GetOrderBySingleSellerService");
 const GetSellerWithFoodDetailsService = require("../../Services/BecomeSeller/GetSellerWithFoodDetailsService");
 const GetSingleBecomeSellerService = require("../../Services/BecomeSeller/GetSingleBecomeSellerService");
+const GetSinglePublicBecomeSellerService = require("../../Services/BecomeSeller/GetSinglePublicBecomeSellerService");
 const UpdateBecomeSellerService = require("../../Services/BecomeSeller/UpdateBecomeSellerService");
 
 //create become a seller
@@ -23,6 +24,12 @@ exports.GetBecomeSeller = async (req, res) => {
 //get single become a seller
 exports.GetSingleBecomeSeller = async (req, res) => {
   let result = await GetSingleBecomeSellerService(req, BecomeSellerModel);
+  res.status(200).json(result);
+};
+
+//get single Public become a seller
+exports.GetSinglePublicBecomeSeller = async (req, res) => {
+  let result = await GetSinglePublicBecomeSellerService(req, BecomeSellerModel);
   res.status(200).json(result);
 };
 

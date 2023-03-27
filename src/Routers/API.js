@@ -949,6 +949,12 @@ router.get(
   BecomeSellerController.GetSingleBecomeSeller
 );
 
+//get single public become a seller with foods
+router.get(
+  "/get-single-public-become-seller/:id",
+  BecomeSellerController.GetSinglePublicBecomeSeller
+);
+
 //update become a seller
 router.post(
   "/update-become-seller/:id",
