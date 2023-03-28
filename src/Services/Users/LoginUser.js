@@ -5,6 +5,21 @@ const LoginUser = async (request, UsersModel) => {
     let data = await UsersModel.aggregate([
       { $match: request.body },
       {
+        $lookup: {
+          from: "become-a-sellers",
+          localField: "_id",
+          foreignField: "sellerID",
+          as: "sellerIDInfo",
+          pipeline: [
+            {
+              $project: {
+                _id: 1,
+              },
+            },
+          ],
+        },
+      },
+      {
         $project: {
           _id: 1,
           email: 1,
@@ -12,6 +27,7 @@ const LoginUser = async (request, UsersModel) => {
           userName: 1,
           userMobileNo: 1,
           userPhoto: 1,
+          sellerIDInfo: 1,
         },
       },
     ]);

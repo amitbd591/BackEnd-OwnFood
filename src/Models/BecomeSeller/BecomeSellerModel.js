@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
     countryID: { type: mongoose.Schema.Types.ObjectId },
+    sellerID: { type: mongoose.Schema.Types.ObjectId }, // from user table
+    sellerNumber: { type: String },
+    userName: { type: String },
     regionID: { type: mongoose.Schema.Types.ObjectId },
     cityID: { type: mongoose.Schema.Types.ObjectId },
-    aboutSeller: { type: String },
     sellerNationalityID: { type: String },
     sellerNationalityByBornID: { type: String },
     sellerProfilePhoto: { type: String },
