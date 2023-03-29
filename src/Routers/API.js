@@ -179,6 +179,12 @@ router.get(
   CategoryController.GetFoodByCategory
 );
 
+// Get Food By Category with filter by all
+router.get(
+  "/get-food-by-category-filter/:id/:limit",
+  CategoryController.GetFoodByCategory
+);
+
 //!  ================== ****  Sub Category **** ==================
 // Create subcategory Router
 router.post(
@@ -188,11 +194,7 @@ router.post(
 );
 
 //get subcategory
-router.get(
-  "/get-subcategory",
-  AuthVerifyMiddleware,
-  SubCategoryController.GetSubCategory
-);
+router.get("/get-subcategory", SubCategoryController.GetSubCategory);
 
 //single subcategory
 router.get(
@@ -225,11 +227,7 @@ router.post(
 );
 
 // Get FoodType Router
-router.get(
-  "/get-foodType",
-  AuthVerifyMiddleware,
-  FoodTypeController.GetFoodType
-);
+router.get("/get-foodType", FoodTypeController.GetFoodType);
 // Get Single FoodType Router
 router.get(
   "/get-single-foodType/:id",
@@ -401,11 +399,7 @@ router.post(
 );
 
 //get additional tag router
-router.get(
-  "/get-additionaltags",
-  AuthVerifyMiddleware,
-  AdditionalTagsController.GetAdditionalTag
-);
+router.get("/get-additionaltags", AdditionalTagsController.GetAdditionalTag);
 
 //get single additional tag
 router.get(
@@ -498,14 +492,16 @@ router.delete(
   FoodItemController.DeleteFood
 );
 
-//!  ================== ****  Country  **** ==================
+// Search Food by single category ID by sub-category, tags, cusion, review, food-type, price near-me
+router.post("/search", FoodItemController.SearchFood),
+  //!  ================== ****  Country  **** ==================
 
-//create Country
-router.post(
-  "/create-country",
-  AuthVerifyMiddleware,
-  CountryController.CreateCountry
-);
+  //create Country
+  router.post(
+    "/create-country",
+    AuthVerifyMiddleware,
+    CountryController.CreateCountry
+  );
 
 //get Country
 router.get("/get-country", AuthVerifyMiddleware, CountryController.GetCountry);

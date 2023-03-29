@@ -2,7 +2,17 @@ const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
     recipeName: { type: String },
-    preparationTime: { type: Date, default: Date.now() },
+    sellerID: { type: mongoose.Schema.Types.ObjectId },
+    recipeCategoryID: { type: mongoose.Schema.Types.ObjectId },
+    recipeDescription: { type: String },
+    proteinDetails: { type: String },
+    preparationTime: { type: String },
+    cookingTime: { type: String },
+    recipeReadyFoodImage: { type: Array },
+    recipeVideo: { type: String },
+
+    shoppingList: { type: String },
+
     ingredients: [
       {
         Qty: { type: String },
@@ -13,12 +23,14 @@ const DataSchema = mongoose.Schema(
     ],
     recipeSteps: [
       {
+        stepNumber: { type: Number },
         stepName: { type: String },
-        Photo: { type: String },
+        Photo: { type: Array },
         Video: { type: String },
       },
     ],
     recipeTips: { type: String },
+
     isMyOwnRecipe: { type: Boolean },
     viewCount: { type: Number },
     likeCount: { type: Number },

@@ -3,6 +3,7 @@ const CreateFoodService = require("../../Services/Food/CreateFoodService");
 const DeleteFoodService = require("../../Services/Food/DeleteFoodService");
 const GetFoodService = require("../../Services/Food/GetFoodService");
 const GetSingleFoodService = require("../../Services/Food/GetSingleFoodService");
+const SearchFoodService = require("../../Services/Food/SearchFoodService");
 const UpdateFoodService = require("../../Services/Food/UpdateFoodService");
 
 //! Create Food
@@ -31,5 +32,11 @@ exports.UpdateFood = async (req, res) => {
 //! Delete Food
 exports.DeleteFood = async (req, res) => {
   let result = await DeleteFoodService(req, FoodModel);
+  res.status(200).json(result);
+};
+
+//! Search Food By Single Category
+exports.SearchFood = async (req, res) => {
+  let result = await SearchFoodService(req, FoodModel);
   res.status(200).json(result);
 };
