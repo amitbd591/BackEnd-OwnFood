@@ -25,6 +25,14 @@ const GetSingleFoodService = async (request, Model) => {
                 as: "categorysData",
               },
             },
+            {
+              $lookup: {
+                from: "food-reviwes",
+                localField: "_id",
+                foreignField: "foodID",
+                as: "foodReviewData",
+              },
+            },
           ],
         },
       },
