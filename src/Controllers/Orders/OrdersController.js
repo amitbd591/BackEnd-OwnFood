@@ -1,6 +1,8 @@
 const OrdersModel = require("../../Models/Orders/OrdersModel");
 const CreateOrdersService = require("../../Services/Orders/CreateOrdersService");
 const DeleteOrdersService = require("../../Services/Orders/DeleteOrdersService");
+const GetOrderBySingleBuyerService = require("../../Services/Orders/GetOrderBySingleBuyerService");
+const GetOrderBySingleSellerService = require("../../Services/Orders/GetOrderBySingleSellerService");
 const GetOrdersService = require("../../Services/Orders/GetOrdersService");
 const GetSingleOrdersService = require("../../Services/Orders/GetSingleOrdersService");
 const UpdateOrdersService = require("../../Services/Orders/UpdateOrdersService");
@@ -31,5 +33,17 @@ exports.UpdateOrders = async (req, res) => {
 //! Delete Orders
 exports.DeleteOrders = async (req, res) => {
   let result = await DeleteOrdersService(req, OrdersModel);
+  res.status(200).json(result);
+};
+
+//! get order by single seller
+exports.GetOrderBySingleSeller = async (req, res) => {
+  let result = await GetOrderBySingleSellerService(req, OrdersModel);
+  res.status(200).json(result);
+};
+
+//!get order by single buyer
+exports.GetOrderBySingleBuyer = async (req, res) => {
+  let result = await GetOrderBySingleBuyerService(req, OrdersModel);
   res.status(200).json(result);
 };

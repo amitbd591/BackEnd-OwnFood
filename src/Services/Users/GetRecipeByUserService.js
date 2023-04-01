@@ -1,28 +1,26 @@
 const { default: mongoose } = require("mongoose");
 
-const GetFoodBySellerService = async (req, model) => {
+const GetRecipeByUserService = async (req, model) => {
   try {
-    let ID = mongoose.Types.ObjectId(req.params.id);
-    var limit = req.params.limit;
-    if (limit == 0) {
-      limit = 1000;
-    }
+    let id = mongoose.Types.ObjectId(req.params.id);
     let data = await model.aggregate([
       {
-        $match: { _id: ID },
+        $match: {
+          _id: id,
+        },
       },
       {
         $lookup: {
-          from: "foods",
+          from: "recipes",
           localField: "_id",
           foreignField: "sellerID",
-          as: "foodData",
-          pipeline: [{ $limit: Number(limit) }],
+          as: "FoodRecipeData",
         },
       },
       {
         $project: {
-          bankDetails: 0,
+          FoodRecipeData: 1,
+          userFullName: 1,
         },
       },
     ]);
@@ -32,4 +30,4 @@ const GetFoodBySellerService = async (req, model) => {
     return { status: "Fail", data: e };
   }
 };
-module.exports = GetFoodBySellerService;
+module.exports = GetRecipeByUserService;

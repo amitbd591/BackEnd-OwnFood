@@ -6,9 +6,9 @@ const DataSchema = mongoose.Schema(
     categoryImage: { type: String },
     categorySlug: { type: String, unique: true },
     status: { type: Boolean },
-    createdBy: { type: String },
+    createdBy: { type: mongoose.Schema.Types.ObjectId },
     createdDate: { type: Date, default: Date.now() },
-    updatedBy: { type: String },
+    updatedBy: { type: mongoose.Schema.Types.ObjectId },
     updatedDate: { type: Date, default: Date.now() },
   },
   { versionKey: false }

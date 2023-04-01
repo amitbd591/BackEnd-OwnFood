@@ -107,6 +107,20 @@ router.post(
 // Reset password
 router.post("/reset-password-service", UsersController.ResetPasswordService);
 
+// get Food Diary by user
+router.get(
+  "/get-food-diary-by-user/:id",
+  AuthVerifyMiddleware,
+  UsersController.GetFoodDiaryByUser
+);
+
+//get recipe by user
+router.get(
+  "/get-recipe-by-user/:id",
+  AuthVerifyMiddleware,
+  UsersController.GetRecipeByUser
+);
+
 //!  ================== ****  Designation Service **** ==================
 // Create Designation Router
 router.post(
@@ -753,6 +767,20 @@ router.delete(
   "/delete-orders/:id",
   AuthVerifyMiddleware,
   OrdersController.DeleteOrders
+);
+
+// get-order-by-single-seller
+router.get(
+  "/get-order-by-single-seller/:id",
+  AuthVerifyMiddleware,
+  OrdersController.GetOrderBySingleSeller
+);
+
+// get-order-by-single-buyer
+router.get(
+  "/get-order-by-single-buyer/:id",
+  AuthVerifyMiddleware,
+  OrdersController.GetOrderBySingleBuyer
 );
 
 //!  ================== ****  Order Tacking  **** ==================

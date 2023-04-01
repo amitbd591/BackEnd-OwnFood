@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const DataSchema = mongoose.Schema(
   {
     recipeName: { type: String },
-    sellerID: { type: mongoose.Schema.Types.ObjectId },
+    sellerID: { type: mongoose.Schema.Types.ObjectId }, // it is userID
     recipeCategoryID: { type: mongoose.Schema.Types.ObjectId },
     recipeDescription: { type: String },
     proteinDetails: { type: String },
@@ -10,9 +10,7 @@ const DataSchema = mongoose.Schema(
     cookingTime: { type: String },
     recipeReadyFoodImage: { type: Array },
     recipeVideo: { type: String },
-
     shoppingList: { type: String },
-
     ingredients: [
       {
         Qty: { type: String },

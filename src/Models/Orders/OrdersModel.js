@@ -2,10 +2,14 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    orderDeliveryAddressID: { type: mongoose.Schema.Types.ObjectId },
-    orderBillingAddressID: { type: mongoose.Schema.Types.ObjectId },
-    orderStatusID: { type: mongoose.Schema.Types.ObjectId },
+    orderDeliveryAddressID: { type: mongoose.Schema.Types.ObjectId }, //!from addressBook
+    orderBillingAddressID: { type: mongoose.Schema.Types.ObjectId }, //!from addressbook
+    orderStatusID: { type: mongoose.Schema.Types.ObjectId }, //!orderStatus
     customerID: { type: mongoose.Schema.Types.ObjectId },
+    sellerID: { type: mongoose.Schema.Types.ObjectId },
+    // orderStatus:{type}
+    orderDeliveryAddress: { type: String },
+    orderBillingAddress: { type: String },
     orderNumber: { type: String },
     orderNotes: { type: String },
     orderTotalAmount: { type: Number },

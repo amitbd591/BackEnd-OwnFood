@@ -9,6 +9,8 @@ const VerifyForgetPassService = require("../../Services/Users/VerifyForgetPassSe
 const UserVerifyOTPService = require("../../Services/Users/UserVerifyOTPService");
 const UserResetPasswordService = require("../../Services/Users/UserResetPasswordService");
 const LoginUser = require("../../Services/Users/LoginUser");
+const GetRecipeByUserService = require("../../Services/Users/GetRecipeByUserService");
+const GetFoodDiaryByUserService = require("../../Services/Users/GetFoodDiaryByUserService");
 
 //! Create Users
 exports.CreateUsers = async (req, res) => {
@@ -60,5 +62,18 @@ exports.VerifyOTPService = async (req, res) => {
 //! User Reset Password Service Data Function
 exports.ResetPasswordService = async (req, res) => {
   let result = await UserResetPasswordService(req, UsersModel);
+  res.status(200).json(result);
+};
+
+//!get food diary by user
+exports.GetFoodDiaryByUser = async (req, res) => {
+  let result = await GetFoodDiaryByUserService(req, UsersModel);
+  res.status(200).json(result);
+};
+
+//!get recipes by user
+
+exports.GetRecipeByUser = async (req, res) => {
+  let result = await GetRecipeByUserService(req, UsersModel);
   res.status(200).json(result);
 };

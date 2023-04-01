@@ -7,6 +7,7 @@ const DataSchema = mongoose.Schema(
     regionThumb: { type: String },
     status: { type: Boolean },
     countryID: { type: mongoose.Schema.Types.ObjectId },
+    countryName: { type: String },
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },
     updatedBy: { type: String },
