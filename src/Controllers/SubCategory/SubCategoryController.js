@@ -1,6 +1,7 @@
 const SubCategoryModel = require("../../Models/SubCategory/SubCategoryModel");
 const CreateSubCategoryService = require("../../Services/SubCategory/CreateSubCategoryService");
 const DeleteSubCategoryService = require("../../Services/SubCategory/DeleteSubCategoryService");
+const GetFoodBySubCategoryService = require("../../Services/SubCategory/GetFoodBySubCategoryService");
 const GetSingleSubCategoryService = require("../../Services/SubCategory/GetSingleSubCategoryService");
 const GetSubCategoryService = require("../../Services/SubCategory/GetSubCategoryService");
 const UpdateSubCategoryService = require("../../Services/SubCategory/UpdateSubCategoryService");
@@ -31,5 +32,11 @@ exports.DeleteSubCategory = async (req, res) => {
 //! get single subcategory
 exports.GetSingleSubCategory = async (req, res) => {
   let result = await GetSingleSubCategoryService(req, SubCategoryModel);
+  res.status(200).json(result);
+};
+
+//!get food by subcategory
+exports.GetFoodBySubCategory = async (req, res) => {
+  let result = await GetFoodBySubCategoryService(req, SubCategoryModel);
   res.status(200).json(result);
 };

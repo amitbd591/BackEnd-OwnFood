@@ -1,11 +1,24 @@
 const mongoose = require("mongoose");
 const FilterFoodService = async (request, Model) => {
   try {
-    let postBody = request.body;
     let categoryID = mongoose.Types.ObjectId(request.body.categoryID);
     let foodAdditionalTags = request.body.foodAdditionalTags;
     let foodPrice = request.body.foodPrice;
     let foodRating = request.body.foodRating;
+
+    let postBody = {};
+    let innerData = {};
+    // if (foodAdditionalTags[0] !== 0) {
+    //   postBody.foodAdditionalTags[0] = foodAdditionalTags;
+    // }
+    if (foodPrice !== 0) {
+      postBody.foodPrice = foodPrice;
+      innerData.foodPrice = { $lt: postBody.foodPrice };
+    }
+    if (foodRating !== 0) {
+      postBody.foodRating = foodRating;
+      innerData.foodRating = { $lt: postBody.foodRating };
+    }
 
     let data = await Model.aggregate([
       {
@@ -16,13 +29,7 @@ const FilterFoodService = async (request, Model) => {
 
       {
         $match: {
-          $and: [
-            {
-              foodAdditionalTags: foodAdditionalTags[0],
-            },
-            { foodPrice: { $lt: foodPrice } },
-            { foodRating: { $lt: foodRating } },
-          ],
+          $and: [innerData],
         },
       },
     ]);

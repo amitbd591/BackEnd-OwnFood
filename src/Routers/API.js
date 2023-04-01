@@ -231,6 +231,13 @@ router.delete(
   SubCategoryController.DeleteSubCategory
 );
 
+//get food by subcategory
+router.get(
+  "/get-food-by-subcategory/:id",
+  AuthVerifyMiddleware,
+  SubCategoryController.GetFoodBySubCategory
+);
+
 //!  ================== ****  FoodType **** ==================
 
 // Create FoodType Router
