@@ -15,7 +15,7 @@ const GetOrderBySingleSellerService = async (req, model) => {
           from: "become-a-sellers",
           localField: "sellerID",
           foreignField: "_id",
-          as: "orderinfo",
+          as: "seller_Info",
           pipeline: [
             {
               $project: {
@@ -210,7 +210,18 @@ const GetOrderBySingleSellerService = async (req, model) => {
       },
       {
         $project: {
-          orderinfo: 1,
+          orderNumber: 1,
+          orderNotes: 1,
+          orderTotalAmount: 1,
+          orderDate: 1,
+          paymentDate: 1,
+          orderStatusID: 1,
+          orderBillingAddressID: 1,
+          orderStatusID: 1,
+          orderDeliveryAddressID: 1,
+          paymentType: 1,
+          orderItems: 1,
+          seller_Info: 1,
           userInfo: 1,
           orderStatus: 1,
           deliveryAddress: 1,

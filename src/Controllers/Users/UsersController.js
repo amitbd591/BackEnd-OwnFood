@@ -11,6 +11,7 @@ const UserResetPasswordService = require("../../Services/Users/UserResetPassword
 const LoginUser = require("../../Services/Users/LoginUser");
 const GetRecipeByUserService = require("../../Services/Users/GetRecipeByUserService");
 const GetFoodDiaryByUserService = require("../../Services/Users/GetFoodDiaryByUserService");
+const GetHowDoWeDoByUserService = require("../../Services/Users/GetHowDoWeDoByUserService");
 
 //! Create Users
 exports.CreateUsers = async (req, res) => {
@@ -75,5 +76,11 @@ exports.GetFoodDiaryByUser = async (req, res) => {
 
 exports.GetRecipeByUser = async (req, res) => {
   let result = await GetRecipeByUserService(req, UsersModel);
+  res.status(200).json(result);
+};
+
+//!get how do we do by user
+exports.GetHowDoWeDoByUser = async (req, res) => {
+  let result = await GetHowDoWeDoByUserService(req, UsersModel);
   res.status(200).json(result);
 };

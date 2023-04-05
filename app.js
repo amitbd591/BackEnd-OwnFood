@@ -58,7 +58,8 @@ mongoose.connect(
 
 // Front ENd Tagging API
 app.use("/api/v1", router);
-
+app.use("/api/v1", routerImg);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // ===================
 // const upload = multer({ dest: "uploads/" });
 let dir = "./uploads/users";

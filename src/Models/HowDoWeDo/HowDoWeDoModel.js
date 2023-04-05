@@ -5,7 +5,7 @@ const DataSchema = mongoose.Schema(
     beforeImage: { type: String },
     afterImage: { type: String },
     Status: { type: Boolean },
-    sellerID: { type: mongoose.Schema.Types.ObjectId },
+    sellerID: { type: mongoose.Schema.Types.ObjectId }, //!user ID
 
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },
@@ -15,5 +15,5 @@ const DataSchema = mongoose.Schema(
   { versionKey: false }
 );
 
-const HowDoWeDoModel = mongoose.model("how-do-we-do", DataSchema);
+const HowDoWeDoModel = mongoose.model("how-do-we-dos", DataSchema);
 module.exports = HowDoWeDoModel;

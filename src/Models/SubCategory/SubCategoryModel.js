@@ -6,7 +6,7 @@ const DataSchema = mongoose.Schema(
     categoryName: { type: String },
     categoryImage: { type: String },
     categorySlug: { type: String },
-    status: { type: String },
+    status: { type: Boolean, default: false },
 
     createdBy: { type: String },
     createdDate: { type: Date, default: Date.now() },

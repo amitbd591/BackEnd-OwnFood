@@ -34,6 +34,9 @@ const BannersAPIController = require("../Controllers/BannersAPI/BannersAPIContro
 const HomePageSectionsController = require("../Controllers/HomePageSections/HomePageSectionsController");
 const HowDoWeDoController = require("../Controllers/HowDoWeDo/HowDoWeDoController");
 const CircleTypeFoodController = require("../Controllers/CircleTypeFood/CircleTypeFoodController");
+const WithdrawalController = require("../Controllers/Withdrawal/WithdrawalController");
+const BankListController = require("../Controllers/BankList/BankListController");
+const RecipeCategoryController = require("../Controllers/RecipeCategory/RecipeCategoryController");
 const BuyerQuestionsAndAnswearController = require("../Controllers/BuyerQuestionsAndAnswear/BuyerQuestionsAndAnswearController");
 
 //!  ================== ****  Super Admin **** ==================
@@ -119,6 +122,13 @@ router.get(
   "/get-recipe-by-user/:id",
   AuthVerifyMiddleware,
   UsersController.GetRecipeByUser
+);
+
+// get how do we do by user
+router.get(
+  "/get-how-do-we-do-by-user/:id",
+  AuthVerifyMiddleware,
+  UsersController.GetHowDoWeDoByUser
 );
 
 //!  ================== ****  Designation Service **** ==================
@@ -790,6 +800,13 @@ router.get(
   OrdersController.GetOrderBySingleBuyer
 );
 
+//get order by single seller with type
+router.get(
+  "/get-order-by-single-seller-with-type/:id/:type",
+  AuthVerifyMiddleware,
+  OrdersController.GetOrderBySingleSellerWithType
+);
+
 //!  ================== ****  Order Tacking  **** ==================
 
 //create OrderTacking
@@ -1256,6 +1273,113 @@ router.delete(
   "/delete-buyer-question-answear/:id",
   AuthVerifyMiddleware,
   BuyerQuestionsAndAnswearController.DeleteBuyerQuestionsAndAnswear
+);
+
+//!  ================== ****  With drawl  **** ==================
+
+//create Withdrawal
+router.post(
+  "/create-withdrawal",
+
+  WithdrawalController.CreateWithdrawal
+);
+
+//get Withdrawals
+router.get("/get-withdrawals", WithdrawalController.GetWithdrawal);
+
+//get single Withdrawal
+router.get(
+  "/get-single-withdrawal/:id",
+
+  WithdrawalController.GetSingleWithdrawal
+);
+
+//update Withdrawal
+router.post(
+  "/update-withdrawal/:id",
+
+  WithdrawalController.UpdateWithdrawal
+);
+
+//delete Withdrawal
+router.delete(
+  "/delete-withdrawal/:id",
+
+  WithdrawalController.DeleteWithdrawal
+);
+
+//!  ================== ****  Bank List  **** ==================
+
+//create Bank
+router.post(
+  "/create-bank",
+  AuthVerifyMiddleware,
+  BankListController.CreateBank
+);
+
+//get banklist
+router.get(
+  "/get-banklist",
+  AuthVerifyMiddleware,
+  BankListController.GetBankList
+);
+
+//get single Bank
+router.get(
+  "/get-single-bank/:id",
+  AuthVerifyMiddleware,
+  BankListController.GetSingleBank
+);
+
+//update Bank Name
+router.post(
+  "/update-bank/:id",
+  AuthVerifyMiddleware,
+  BankListController.UpdateBank
+);
+
+//delete bank
+router.delete(
+  "/delete-bank/:id",
+
+  BankListController.DeleteBank
+);
+
+//!  ================== ****  Recipe Categories  **** ==================
+
+// create Recipe Categories
+router.post(
+  "/create-recipe-category",
+  AuthVerifyMiddleware,
+  RecipeCategoryController.CreateRecipeCategory
+);
+
+//get recipe-category
+router.get(
+  "/get-recipe-category",
+  AuthVerifyMiddleware,
+  RecipeCategoryController.GetRecipeCategory
+);
+
+//get single recipe-category
+router.get(
+  "/get-single-recipe-category/:id",
+  AuthVerifyMiddleware,
+  RecipeCategoryController.GetSingleRecipeCategory
+);
+
+//update  recipe-category
+router.post(
+  "/update-recipe-category/:id",
+  AuthVerifyMiddleware,
+  RecipeCategoryController.UpdateRecipeCategory
+);
+
+//delete  recipe-category
+router.delete(
+  "/delete-recipe-category/:id",
+  AuthVerifyMiddleware,
+  RecipeCategoryController.DeleteRecipeCategory
 );
 
 module.exports = router;

@@ -11,6 +11,7 @@ const DataSchema = mongoose.Schema(
     sellerNationalityID: { type: String },
     sellerNationalityByBornID: { type: String },
     sellerProfilePhoto: { type: String },
+    status: { type: Boolean, default: false },
     kitchenName: { type: String },
     kitchenImages: [
       {

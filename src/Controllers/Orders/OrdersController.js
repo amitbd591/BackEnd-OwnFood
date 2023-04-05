@@ -3,6 +3,7 @@ const CreateOrdersService = require("../../Services/Orders/CreateOrdersService")
 const DeleteOrdersService = require("../../Services/Orders/DeleteOrdersService");
 const GetOrderBySingleBuyerService = require("../../Services/Orders/GetOrderBySingleBuyerService");
 const GetOrderBySingleSellerService = require("../../Services/Orders/GetOrderBySingleSellerService");
+const GetOrderBySingleSellerWithTypeService = require("../../Services/Orders/GetOrderBySingleSellerWithTypeService");
 const GetOrdersService = require("../../Services/Orders/GetOrdersService");
 const GetSingleOrdersService = require("../../Services/Orders/GetSingleOrdersService");
 const UpdateOrdersService = require("../../Services/Orders/UpdateOrdersService");
@@ -45,5 +46,11 @@ exports.GetOrderBySingleSeller = async (req, res) => {
 //!get order by single buyer
 exports.GetOrderBySingleBuyer = async (req, res) => {
   let result = await GetOrderBySingleBuyerService(req, OrdersModel);
+  res.status(200).json(result);
+};
+
+//!get order by single seller with type
+exports.GetOrderBySingleSellerWithType = async (req, res) => {
+  let result = await GetOrderBySingleSellerWithTypeService(req, OrdersModel);
   res.status(200).json(result);
 };
